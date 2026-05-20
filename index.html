@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)file:///C:/Users/Jo%C3%A3o/Downloads/index_3.html -->
+<!-- saved from url=(0049)file:///C:/Users/Jo%C3%A3o/Downloads/index_4.html -->
 <html lang="pt"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
@@ -10,2713 +10,429 @@
 <title>💸 Gestão de Passivo</title>
 <link rel="apple-touch-icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%F0%9F%92%B8&lt;/text&gt;&lt;/svg&gt;">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
-  :root {
-    --bg:#f5f0e8;--bg2:#ede8df;--surface:#faf7f2;--surface2:#ede8df;
-    --border:#d8d0c4;--border2:#c8bfb2;--text:#1a1714;--text2:#4a4540;--muted:#8a8078;
-    --green:#2a6b3c;--green-bg:#e8f4ec;--green-border:#b8ddc4;
-    --red:#8b2020;--red-bg:#faeaea;--red-border:#ddb8b8;
-    --amber:#7a5200;--amber-bg:#fdf3e0;--amber-border:#e8d4a0;
-    --blue:#1a4a7a;--blue-bg:#e8f0fa;--blue-border:#b8ccec;
-    --col:#3a3a8c;--col-bg:#eeeef8;--col-border:#c4c4e8;
-    --atj:#7a3800;--atj-bg:#fdf0e4;--atj-border:#e8c8a0;
-    --radius:10px;--radius-sm:6px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-  html,body{height:100%;background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:14px;}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+:root{
+  --bg:#f5f0e8;--bg2:#ede8df;--surface:#faf7f2;
+  --border:#d8d0c4;--border2:#c8bfb2;
+  --text:#1a1714;--text2:#4a4540;--muted:#8a8078;
+  --green:#2a6b3c;--green-bg:#e8f4ec;--green-bd:#b8ddc4;
+  --red:#8b2020;--red-bg:#faeaea;--red-bd:#ddb8b8;
+  --amber:#7a5200;--amber-bg:#fdf3e0;--amber-bd:#e8d4a0;
+  --blue:#1a4a7a;--blue-bg:#e8f0fa;--blue-bd:#b8ccec;
+  --r:10px;--rsm:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:14px;}
 
-  .header{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 16px;position:sticky;top:0;z-index:100;}
-  .header-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;}
-  .header-title{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-family:'IBM Plex Mono',monospace;}
-  .header-name{font-size:19px;font-weight:600;color:var(--text);letter-spacing:-0.5px;margin-top:2px;}
-  .saved-tag{font-size:10px;background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);border-radius:20px;padding:3px 10px;font-family:'IBM Plex Mono',monospace;opacity:0;transition:opacity 0.3s;white-space:nowrap;margin-top:4px;}
-  .saved-tag.show{opacity:1;}
+/* HEADER */
+.hdr{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 16px;position:sticky;top:0;z-index:100;}
+.hdr-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
+.hdr-lbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-family:'IBM Plex Mono',monospace;}
+.hdr-title{font-size:20px;font-weight:600;letter-spacing:-.5px;margin-top:2px;}
+.saved{font-size:10px;background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd);border-radius:20px;padding:3px 10px;font-family:'IBM Plex Mono',monospace;opacity:0;transition:opacity .3s;margin-top:4px;}
+.saved.show{opacity:1;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;}
+.sc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:10px 11px;}
+.sc-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-family:'IBM Plex Mono',monospace;}
+.sc-val{font-size:13px;font-weight:600;font-family:'IBM Plex Mono',monospace;}
+.sc input{width:100%;background:transparent;border:none;outline:none;font-size:13px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:inherit;-webkit-appearance:none;}
+.green{color:var(--green);}.red{color:var(--red);}.amber{color:var(--amber);}.blue{color:var(--blue);}
+.prog-row{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:4px;font-family:'IBM Plex Mono',monospace;}
+.prog-track{background:var(--bg2);border:1px solid var(--border);border-radius:4px;height:6px;overflow:hidden;}
+.prog-fill{height:6px;border-radius:3px;transition:width .3s,background .3s;}
+.ovr{font-size:10px;color:var(--red);margin-top:3px;font-family:'IBM Plex Mono',monospace;display:none;}
 
-  .summary{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;padding:0 0 12px;}
-  .card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 11px;}
-  .card-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;font-family:'IBM Plex Mono',monospace;}
-  .card-val{font-size:13px;font-weight:600;font-family:'IBM Plex Mono',monospace;}
-  .card-val.green{color:var(--green);}
-  .card-val.red{color:var(--red);}
-  .card-val.amber{color:var(--amber);}
-  .card-val.blue{color:var(--blue);}
-  .card input{width:100%;background:transparent;border:none;outline:none;font-size:13px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:inherit;-webkit-appearance:none;}
+/* BOTTOM NAV */
+.bnav{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom);}
+.bnav-btn{flex:1;display:flex;flex-direction:column;align-items:center;padding:10px 4px 8px;border:none;background:transparent;cursor:pointer;color:var(--muted);font-size:10px;font-family:'IBM Plex Mono',monospace;gap:3px;transition:color .15s;}
+.bnav-btn .ico{font-size:20px;}
+.bnav-btn.active{color:var(--text);}
 
-  .progress-wrap{padding-bottom:2px;}
-  .progress-row{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:5px;font-family:'IBM Plex Mono',monospace;}
-  .progress-track{background:var(--bg2);border:1px solid var(--border);border-radius:4px;height:7px;overflow:hidden;}
-  .progress-fill{height:7px;border-radius:3px;transition:width 0.3s,background 0.3s;}
+/* PAGE */
+.page{display:none;padding:12px 16px 100px;}
+.page.active{display:block;}
 
-  .tabs{display:flex;gap:4px;padding:10px 16px 8px;overflow-x:auto;scrollbar-width:none;background:var(--surface);border-bottom:1px solid var(--border);}
-  .tabs::-webkit-scrollbar{display:none;}
-  .tab{flex-shrink:0;padding:5px 12px;border-radius:4px;font-size:11px;font-weight:500;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-family:'IBM Plex Mono',monospace;}
-  .tab.active{background:var(--text);color:var(--surface);border-color:var(--text);}
+/* EMPRESA CARD on overview */
+.emp-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:12px;}
+.emp-card-name{font-size:17px;font-weight:600;margin-bottom:12px;}
+.stat3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;}
+.stat{border-radius:var(--rsm);padding:10px;text-align:center;}
+.stat-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.5px;font-family:'IBM Plex Mono',monospace;margin-bottom:3px;}
+.stat-val{font-size:13px;font-weight:700;font-family:'IBM Plex Mono',monospace;}
+.chart-wrap{display:flex;align-items:center;gap:16px;padding-top:14px;border-top:1px solid var(--border);}
+.legend{flex:1;font-size:11px;}
+.leg-row{display:flex;align-items:center;gap:6px;margin-bottom:6px;}
+.leg-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+.leg-name{flex:1;color:var(--text2);}
+.leg-val{font-family:'IBM Plex Mono',monospace;font-weight:500;color:var(--red);}
+.leg-val.ok{color:var(--green);}
 
-  .action-bar{display:flex;gap:6px;padding:10px 16px 6px;}
-  .btn{flex:1;padding:10px 8px;border-radius:var(--radius-sm);font-size:12px;font-weight:500;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;}
-  .btn:active{background:var(--bg2);}
-  .btn.primary{background:var(--text);color:var(--surface);border-color:var(--text);}
+/* SUBFAM */
+.sfblock{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);margin-bottom:8px;overflow:hidden;}
+.sfhdr{display:flex;align-items:center;gap:10px;padding:13px 14px;cursor:pointer;}
+.sficon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.sfinfo{flex:1;}
+.sfname{font-size:14px;font-weight:600;}
+.sfmeta{font-size:10px;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-top:2px;}
+.sfright{text-align:right;}
+.sftotal{font-size:14px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:var(--red);}
+.sftotal.ok{color:var(--green);}
+.sfchev{font-size:11px;color:var(--muted);margin-left:6px;transition:transform .2s;display:inline-block;}
+.sfchev.open{transform:rotate(180deg);}
+.sfbody{display:none;border-top:1px solid var(--border);background:var(--bg2);}
+.sfbody.open{display:block;}
 
-  .list{padding:8px 16px 120px;}
-  .group-header{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-family:'IBM Plex Mono',monospace;padding:14px 0 6px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);margin-bottom:8px;}
-  .group-total{font-size:11px;color:var(--amber);font-family:'IBM Plex Mono',monospace;font-weight:500;}
+/* CREDOR */
+.cr{background:var(--surface);border-bottom:1px solid var(--border);}
+.cr:last-of-type{border-bottom:none;}
+.cr-main{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer;min-height:58px;}
+.cr-stripe{width:3px;height:32px;border-radius:2px;flex-shrink:0;}
+.cr-info{flex:1;min-width:0;}
+.cr-name{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cr-sub{font-size:10px;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-top:2px;}
+.cr-right{text-align:right;flex-shrink:0;min-width:85px;}
+.cr-amt{font-size:14px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:var(--red);}
+.cr-amt.ok{color:var(--green);}
+.cr-pago{font-size:10px;color:var(--green);font-family:'IBM Plex Mono',monospace;}
+.cbadge{font-size:9px;padding:2px 5px;border-radius:3px;font-weight:500;font-family:'IBM Plex Mono',monospace;display:inline-block;margin-top:2px;}
+.b-gray{background:var(--bg2);color:var(--muted);border:1px solid var(--border);}
+.b-amber{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-bd);}
+.b-green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd);}
+.b-blue{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-bd);}
 
-  .row{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;overflow:hidden;transition:border-color 0.2s;}
-  .row.expanded{border-color:var(--border2);box-shadow:0 2px 8px rgba(0,0,0,0.06);}
-  .row-main{display:flex;align-items:center;gap:10px;padding:13px 12px;cursor:pointer;min-height:60px;}
-  .row-stripe{width:3px;height:34px;border-radius:2px;flex-shrink:0;}
-  .row-info{flex:1;min-width:0;}
-  .row-name{font-weight:500;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text);}
-  .row-tipo{font-size:9px;color:var(--muted);font-family:'IBM Plex Mono',monospace;letter-spacing:0.5px;margin-top:2px;}
-  .row-right{text-align:right;flex-shrink:0;min-width:90px;}
-  .row-amount{font-size:15px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:var(--red);}
-  .row-amount.paid{color:var(--green);}
-  .row-paid{font-size:10px;color:var(--green);font-family:'IBM Plex Mono',monospace;margin-top:1px;}
-  .row-badge{font-size:9px;padding:2px 6px;border-radius:3px;font-weight:500;font-family:'IBM Plex Mono',monospace;display:inline-block;margin-top:3px;}
-  .b-gray{background:var(--bg2);color:var(--muted);border:1px solid var(--border);}
-  .b-amber{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border);}
-  .b-green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);}
-  .b-blue{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);}
+.cr-detail{display:none;border-top:1px solid var(--border);background:var(--bg);}
+.cr-detail.open{display:block;}
+.dp{padding:14px;}
 
-  /* DETAIL PANEL */
-  .row-detail{display:none;border-top:1px solid var(--border);background:var(--bg2);}
-  .row-detail.open{display:block;}
-  .detail-inner{padding:14px 12px;}
+.pay-box{background:var(--surface);border:2px solid var(--amber-bd);border-radius:var(--r);padding:14px;margin-bottom:12px;}
+.pay-lbl{font-size:10px;color:var(--amber);text-transform:uppercase;letter-spacing:1px;font-family:'IBM Plex Mono',monospace;font-weight:600;margin-bottom:8px;}
+.pay-inp{width:100%;background:var(--amber-bg);border:2px solid var(--amber-bd);border-radius:var(--rsm);padding:14px;color:var(--amber);font-size:24px;font-weight:700;font-family:'IBM Plex Mono',monospace;outline:none;-webkit-appearance:none;text-align:center;}
+.pay-inp:focus{border-color:var(--amber);}
+.conc-btn{width:100%;padding:13px;background:var(--green);color:#fff;border:none;border-radius:var(--rsm);font-size:15px;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;margin-bottom:10px;}
+.field{margin-bottom:10px;}
+.field label{font-size:9px;color:var(--muted);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:1px;font-family:'IBM Plex Mono',monospace;}
+.field input,.field select{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--rsm);padding:11px 12px;color:var(--text);font-size:16px;font-family:'IBM Plex Mono',monospace;outline:none;-webkit-appearance:none;}
+.field input:focus,.field select:focus{border-color:var(--border2);}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.del-btn{width:100%;padding:10px;background:var(--red-bg);color:var(--red);border:1px solid var(--red-bd);border-radius:var(--rsm);font-size:13px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-weight:500;margin-top:4px;}
+.fisco-note{background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:var(--rsm);padding:10px 12px;font-size:11px;color:var(--blue);margin-bottom:12px;font-family:'IBM Plex Mono',monospace;line-height:1.5;}
 
-  .field{margin-bottom:12px;}
-  .field label{font-size:9px;color:var(--muted);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-family:'IBM Plex Mono',monospace;}
-  .field input,.field select{
-    width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);
-    padding:12px 14px;color:var(--text);font-size:16px;font-family:'IBM Plex Mono',monospace;
-    outline:none;-webkit-appearance:none;appearance:none;
-    box-shadow:0 1px 3px rgba(0,0,0,0.05);
-  }
-  .field input:focus,.field select:focus{border-color:var(--border2);box-shadow:0 0 0 3px rgba(26,23,20,0.08);}
-  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.add-sf-btn{display:flex;align-items:center;gap:8px;padding:12px 14px;cursor:pointer;color:var(--green);font-size:13px;font-weight:500;border-top:1px solid var(--border);background:var(--surface);}
 
-  /* BIG PAY FIELD */
-  .pay-section{background:var(--surface);border:2px solid var(--amber-border);border-radius:var(--radius);padding:14px;margin-bottom:12px;}
-  .pay-section-label{font-size:10px;color:var(--amber);text-transform:uppercase;letter-spacing:1px;font-family:'IBM Plex Mono',monospace;margin-bottom:8px;font-weight:600;}
-  .pay-field{width:100%;background:var(--amber-bg);border:2px solid var(--amber-border);border-radius:var(--radius-sm);padding:14px;color:var(--amber);font-size:22px;font-weight:700;font-family:'IBM Plex Mono',monospace;outline:none;-webkit-appearance:none;text-align:center;}
-  .pay-field:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(122,82,0,0.12);}
+/* TOOLBAR */
+.tbar{display:flex;gap:6px;padding:10px 0 6px;}
+.tbtn{flex:1;padding:9px 6px;border-radius:var(--rsm);font-size:11px;font-weight:500;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;}
+.tbtn.p{background:var(--text);color:var(--surface);border-color:var(--text);}
 
-  .concluido-btn{width:100%;padding:14px;background:var(--green);color:white;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;letter-spacing:0.3px;margin-bottom:10px;}
-  .concluido-btn:active{background:var(--green);opacity:0.85;}
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(26,23,20,.5);z-index:400;display:none;align-items:flex-end;}
+.modal-bg.open{display:flex;}
+.modal{background:var(--surface);border-radius:16px 16px 0 0;padding:20px 16px 44px;width:100%;border-top:1px solid var(--border);}
+.modal-title{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-bottom:16px;}
+.mopt{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);cursor:pointer;}
+.mopt:last-child{border-bottom:none;}
+.micon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;font-family:'IBM Plex Mono',monospace;}
+.mlbl{font-size:14px;font-weight:500;}
+.msub{font-size:11px;color:var(--muted);}
+.empty{text-align:center;padding:40px 16px;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
 
-  .del-btn{width:100%;padding:10px;background:var(--red-bg);color:var(--red);border:1px solid var(--red-border);border-radius:var(--radius-sm);font-size:13px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-weight:500;}
-  .fisco-note{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:var(--radius-sm);padding:10px 12px;font-size:12px;color:var(--blue);margin-bottom:12px;font-family:'IBM Plex Mono',monospace;line-height:1.5;}
-
-  .fab{position:fixed;bottom:24px;right:20px;width:52px;height:52px;border-radius:50%;background:var(--text);color:var(--surface);font-size:24px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,0.2);z-index:200;}
-
-  .modal-bg{position:fixed;inset:0;background:rgba(26,23,20,0.5);z-index:300;display:none;align-items:flex-end;}
-  .modal-bg.open{display:flex;}
-  .modal{background:var(--surface);border-radius:16px 16px 0 0;padding:20px 16px 44px;width:100%;border-top:1px solid var(--border);}
-  .modal-title{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-bottom:16px;}
-  .modal-opt{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);cursor:pointer;}
-  .modal-opt:last-child{border-bottom:none;}
-  .modal-opt-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'IBM Plex Mono',monospace;}
-  .modal-opt-label{font-size:14px;font-weight:500;color:var(--text);}
-  .modal-opt-sub{font-size:11px;color:var(--muted);}
-  .empty{text-align:center;padding:48px 20px;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
-  .over-warn{font-size:10px;color:var(--red);margin-top:4px;font-family:'IBM Plex Mono',monospace;display:none;}
+/* FAB */
+.fab{position:fixed;bottom:72px;right:20px;width:50px;height:50px;border-radius:50%;background:var(--text);color:var(--surface);font-size:22px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 16px rgba(0,0,0,.2);z-index:200;}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="header-top">
-    <div>
-      <div class="header-title">Dashboard</div>
-      <div class="header-name">Gestão de Passivo</div>
-    </div>
-    <div class="saved-tag" id="saved-tag">✓ guardado</div>
+<div class="hdr">
+  <div class="hdr-top">
+    <div><div class="hdr-lbl">Dashboard</div><div class="hdr-title">Gestão de Passivo</div></div>
+    <div class="saved" id="sv">✓ guardado</div>
   </div>
-  <div class="summary">
-    <div class="card">
-      <div class="card-label">Caixa (€)</div>
-      <input class="card-val green" id="i-caixa" type="number" inputmode="decimal" value="33270" oninput="save();update()">
-    </div>
-    <div class="card">
-      <div class="card-label">Almofada (€)</div>
-      <input class="card-val blue" id="i-alm" type="number" inputmode="decimal" value="10000" oninput="save();update()">
-    </div>
-    <div class="card"><div class="card-label">Disponível</div><div class="card-val amber" id="c-dist">23&nbsp;270,00 €</div></div>
-    <div class="card"><div class="card-label">Alocado</div><div class="card-val amber" id="c-aloc" style="color: var(--amber);">0,00 €</div></div>
-    <div class="card"><div class="card-label">Livre</div><div class="card-val green" id="c-livre" style="color: var(--green);">23&nbsp;270,00 €</div></div>
-    <div class="card"><div class="card-label">Passivo total</div><div class="card-val red" id="c-div">168&nbsp;672,70 €</div></div>
+  <div class="grid3">
+    <div class="sc"><div class="sc-lbl">Caixa (€)</div><input class="sc-val green" id="i-caixa" type="number" inputmode="decimal" value="33270" oninput="save();upd()"></div>
+    <div class="sc"><div class="sc-lbl">Almofada (€)</div><input class="sc-val blue" id="i-alm" type="number" inputmode="decimal" value="10000" oninput="save();upd()"></div>
+    <div class="sc"><div class="sc-lbl">Disponível</div><div class="sc-val amber" id="c-dist">23&nbsp;270,00 €</div></div>
+    <div class="sc"><div class="sc-lbl">Alocado</div><div class="sc-val amber" id="c-aloc" style="color: var(--amber);">0,00 €</div></div>
+    <div class="sc"><div class="sc-lbl">Livre</div><div class="sc-val green" id="c-livre" style="color: var(--green);">23&nbsp;270,00 €</div></div>
+    <div class="sc"><div class="sc-lbl">Passivo total</div><div class="sc-val red" id="c-div">168&nbsp;672,70 €</div></div>
   </div>
-  <div class="progress-wrap">
-    <div class="progress-row"><span>orçamento alocado</span><span id="bar-pct">0%</span></div>
-    <div class="progress-track"><div class="progress-fill" id="bar-fill" style="width: 0%; background: rgb(42, 107, 60);"></div></div>
-    <div class="over-warn" id="over-warn" style="display: none;">⚠ Ultrapassaste o valor disponível</div>
-  </div>
+  <div class="prog-row"><span>orçamento alocado</span><span id="bar-pct">0%</span></div>
+  <div class="prog-track"><div class="prog-fill" id="bar-fill" style="width: 0%; background: rgb(42, 107, 60);"></div></div>
+  <div class="ovr" id="ovr" style="display: none;">⚠ Ultrapassaste o valor disponível</div>
 </div>
 
-<div class="tabs">
-  <div class="tab active" onclick="setTab(&#39;all&#39;,this)">Todos</div>
-  <div class="tab" onclick="setTab(&#39;Colinatrum&#39;,this)">Colinatrum</div>
-  <div class="tab" onclick="setTab(&#39;Ate Já&#39;,this)">Ate Já</div>
-  <div class="tab" onclick="setTab(&#39;salario&#39;,this)">Salários</div>
-  <div class="tab" onclick="setTab(&#39;fornecedor&#39;,this)">Fornecedores</div>
-  <div class="tab" onclick="setTab(&#39;fisco&#39;,this)">Fisco</div>
-  <div class="tab" onclick="setTab(&#39;socio&#39;,this)">Sócios</div>
-</div>
-
-<div class="action-bar">
-  <button class="btn primary" onclick="autoFill()">↺ Distribuir auto</button>
-  <button class="btn" onclick="clearPay()">Limpar pagamentos</button>
-</div>
-
-<div class="list" id="list"><div class="group-header"><span>COLINATRUM</span><span class="group-total">62&nbsp;347,08 € em falta</span></div><div class="row ">
-      <div class="row-main" onclick="toggleRow(1)">
-        <div class="row-stripe" style="background:#2a6b3c"></div>
-        <div class="row-info">
-          <div class="row-name">Gilson</div>
-          <div class="row-tipo">SALARIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">2954,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-1" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(1,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(1)">✓ Marcar como concluído (2954,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Gilson" onchange="updateRow(1,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(1,&#39;tipo&#39;,this.value)">
-                <option selected="" value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="2954.00" onchange="updateRow(1,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(1,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(1)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(2)">
-        <div class="row-stripe" style="background:#2a6b3c"></div>
-        <div class="row-info">
-          <div class="row-name">Edson</div>
-          <div class="row-tipo">SALARIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">2164,53 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-2" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(2,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(2)">✓ Marcar como concluído (2164,53 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Edson" onchange="updateRow(2,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(2,&#39;tipo&#39;,this.value)">
-                <option selected="" value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="2164.53" onchange="updateRow(2,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(2,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(2)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(3)">
-        <div class="row-stripe" style="background:#2a6b3c"></div>
-        <div class="row-info">
-          <div class="row-name">Esperança</div>
-          <div class="row-tipo">SALARIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">1990,58 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-3" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(3,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(3)">✓ Marcar como concluído (1990,58 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Esperança" onchange="updateRow(3,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(3,&#39;tipo&#39;,this.value)">
-                <option selected="" value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="1990.58" onchange="updateRow(3,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(3,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(3)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(4)">
-        <div class="row-stripe" style="background:#2a6b3c"></div>
-        <div class="row-info">
-          <div class="row-name">Patricia</div>
-          <div class="row-tipo">SALARIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">1269,09 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-4" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(4,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(4)">✓ Marcar como concluído (1269,09 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Patricia" onchange="updateRow(4,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(4,&#39;tipo&#39;,this.value)">
-                <option selected="" value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="1269.09" onchange="updateRow(4,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(4,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(4)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(5)">
-        <div class="row-stripe" style="background:#2a6b3c"></div>
-        <div class="row-info">
-          <div class="row-name">Alex</div>
-          <div class="row-tipo">SALARIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">1230,53 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-5" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(5,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(5)">✓ Marcar como concluído (1230,53 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Alex" onchange="updateRow(5,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(5,&#39;tipo&#39;,this.value)">
-                <option selected="" value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="1230.53" onchange="updateRow(5,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(5,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(5)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(6)">
-        <div class="row-stripe" style="background:#2a6b3c"></div>
-        <div class="row-info">
-          <div class="row-name">Swelly</div>
-          <div class="row-tipo">SALARIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">1116,31 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-6" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(6,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(6)">✓ Marcar como concluído (1116,31 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Swelly" onchange="updateRow(6,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(6,&#39;tipo&#39;,this.value)">
-                <option selected="" value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="1116.31" onchange="updateRow(6,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(6,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(6)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(7)">
-        <div class="row-stripe" style="background:#2a6b3c"></div>
-        <div class="row-info">
-          <div class="row-name">Jaimila</div>
-          <div class="row-tipo">SALARIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">1200,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-7" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(7,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(7)">✓ Marcar como concluído (1200,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Jaimila" onchange="updateRow(7,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(7,&#39;tipo&#39;,this.value)">
-                <option selected="" value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="1200.00" onchange="updateRow(7,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(7,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(7)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(8)">
-        <div class="row-stripe" style="background:#2a6b3c"></div>
-        <div class="row-info">
-          <div class="row-name">Siny</div>
-          <div class="row-tipo">SALARIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">753,35 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-8" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(8,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(8)">✓ Marcar como concluído (753,35 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Siny" onchange="updateRow(8,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(8,&#39;tipo&#39;,this.value)">
-                <option selected="" value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="753.35" onchange="updateRow(8,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(8,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(8)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(9)">
-        <div class="row-stripe" style="background:#2a6b3c"></div>
-        <div class="row-info">
-          <div class="row-name">Carmem</div>
-          <div class="row-tipo">SALARIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">650,23 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-9" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(9,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(9)">✓ Marcar como concluído (650,23 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Carmem" onchange="updateRow(9,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(9,&#39;tipo&#39;,this.value)">
-                <option selected="" value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="650.23" onchange="updateRow(9,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(9,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(9)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(10)">
-        <div class="row-stripe" style="background:#2a6b3c"></div>
-        <div class="row-info">
-          <div class="row-name">Ivone</div>
-          <div class="row-tipo">SALARIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">600,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-10" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(10,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(10)">✓ Marcar como concluído (600,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Ivone" onchange="updateRow(10,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(10,&#39;tipo&#39;,this.value)">
-                <option selected="" value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="600.00" onchange="updateRow(10,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(10,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(10)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(11)">
-        <div class="row-stripe" style="background:#2a6b3c"></div>
-        <div class="row-info">
-          <div class="row-name">Miguel ate já</div>
-          <div class="row-tipo">SALARIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">420,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-11" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(11,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(11)">✓ Marcar como concluído (420,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Miguel ate já" onchange="updateRow(11,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(11,&#39;tipo&#39;,this.value)">
-                <option selected="" value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="420.00" onchange="updateRow(11,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(11,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(11)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(12)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Suminho</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">16&nbsp;164,83 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-12" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(12,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(12)">✓ Marcar como concluído (16&nbsp;164,83 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Suminho" onchange="updateRow(12,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(12,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="16164.83" onchange="updateRow(12,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(12,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(12)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(13)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Segafredo</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">6022,71 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-13" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(13,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(13)">✓ Marcar como concluído (6022,71 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Segafredo" onchange="updateRow(13,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(13,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="6022.71" onchange="updateRow(13,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(13,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(13)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(14)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Casemira de Lima</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">5061,79 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-14" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(14,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(14)">✓ Marcar como concluído (5061,79 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Casemira de Lima" onchange="updateRow(14,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(14,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="5061.79" onchange="updateRow(14,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(14,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(14)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(15)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Frescas Supresas</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">4287,68 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-15" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(15,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(15)">✓ Marcar como concluído (4287,68 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Frescas Supresas" onchange="updateRow(15,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(15,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="4287.68" onchange="updateRow(15,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(15,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(15)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(16)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Talho</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">2952,18 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-16" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(16,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(16)">✓ Marcar como concluído (2952,18 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Talho" onchange="updateRow(16,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(16,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="2952.18" onchange="updateRow(16,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(16,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(16)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(17)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Makro</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">2400,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-17" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(17,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(17)">✓ Marcar como concluído (2400,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Makro" onchange="updateRow(17,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(17,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="2400.00" onchange="updateRow(17,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(17,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(17)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(18)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Elis</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">1533,03 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-18" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(18,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(18)">✓ Marcar como concluído (1533,03 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Elis" onchange="updateRow(18,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(18,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="1533.03" onchange="updateRow(18,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(18,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(18)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(19)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Sumol Compal</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">728,56 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-19" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(19,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(19)">✓ Marcar como concluído (728,56 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Sumol Compal" onchange="updateRow(19,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(19,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="728.56" onchange="updateRow(19,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(19,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(19)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(20)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Vanibru</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">700,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-20" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(20,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(20)">✓ Marcar como concluído (700,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Vanibru" onchange="updateRow(20,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(20,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="700.00" onchange="updateRow(20,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(20,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(20)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(21)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Gas</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">541,81 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-21" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(21,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(21)">✓ Marcar como concluído (541,81 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Gas" onchange="updateRow(21,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(21,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="541.81" onchange="updateRow(21,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(21,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(21)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(22)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Bio Braga</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">535,11 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-22" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(22,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(22)">✓ Marcar como concluído (535,11 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Bio Braga" onchange="updateRow(22,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(22,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="535.11" onchange="updateRow(22,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(22,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(22)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(23)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">CleanZende</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">479,70 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-23" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(23,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(23)">✓ Marcar como concluído (479,70 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="CleanZende" onchange="updateRow(23,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(23,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="479.70" onchange="updateRow(23,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(23,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(23)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(24)">
-        <div class="row-stripe" style="background:#3a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">Vinhos</div>
-          <div class="row-tipo">FORNECEDOR · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">115,06 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-24" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(24,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(24)">✓ Marcar como concluído (115,06 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Vinhos" onchange="updateRow(24,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(24,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="115.06" onchange="updateRow(24,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(24,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(24)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(25)">
-        <div class="row-stripe" style="background:#5a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">António (sócio)</div>
-          <div class="row-tipo">SOCIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">3924,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-25" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(25,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(25)">✓ Marcar como concluído (3924,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="António (sócio)" onchange="updateRow(25,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(25,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option selected="" value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="3924.00" onchange="updateRow(25,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(25,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(25)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(26)">
-        <div class="row-stripe" style="background:#5a3a8c"></div>
-        <div class="row-info">
-          <div class="row-name">João (sócio)</div>
-          <div class="row-tipo">SOCIO · Colinatrum</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">2552,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-26" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(26,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(26)">✓ Marcar como concluído (2552,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="João (sócio)" onchange="updateRow(26,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(26,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option selected="" value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="2552.00" onchange="updateRow(26,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(26,&#39;empresa&#39;,this.value)">
-                <option selected="">Colinatrum</option>
-                <option>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(26)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="group-header"><span>ATE JÁ</span><span class="group-total">106&nbsp;325,62 € em falta</span></div><div class="row ">
-      <div class="row-main" onclick="toggleRow(27)">
-        <div class="row-stripe" style="background:#1a4a7a"></div>
-        <div class="row-info">
-          <div class="row-name">AT (Fisco)</div>
-          <div class="row-tipo">FISCO · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">31&nbsp;500,00 €</div>
-          
-          <span class="row-badge b-blue">PRESTAÇÕES</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          <div class="fisco-note">⚠️ Não pagar de uma vez — pede plano de prestações ao fisco.</div>
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-27" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(27,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(27)">✓ Marcar como concluído (31&nbsp;500,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="AT (Fisco)" onchange="updateRow(27,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(27,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option selected="" value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="31500.00" onchange="updateRow(27,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(27,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(27)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(28)">
-        <div class="row-stripe" style="background:#1a4a7a"></div>
-        <div class="row-info">
-          <div class="row-name">SS (Seg. Social)</div>
-          <div class="row-tipo">FISCO · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">32&nbsp;500,00 €</div>
-          
-          <span class="row-badge b-blue">PRESTAÇÕES</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          <div class="fisco-note">⚠️ Não pagar de uma vez — pede plano de prestações ao fisco.</div>
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-28" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(28,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(28)">✓ Marcar como concluído (32&nbsp;500,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="SS (Seg. Social)" onchange="updateRow(28,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(28,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option value="fornecedor">Fornecedor</option>
-                <option selected="" value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="32500.00" onchange="updateRow(28,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(28,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(28)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(29)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Rendas</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">7000,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-29" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(29,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(29)">✓ Marcar como concluído (7000,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Rendas" onchange="updateRow(29,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(29,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="7000.00" onchange="updateRow(29,&#39;amount&#39;,parseFloat(this.value)||0)">
+<!-- PAGES -->
+<div class="page active" id="pg-overview"><div style="display:flex;gap:6px;padding-bottom:6px;">
+    <button class="tbtn p" onclick="autoFill()" style="flex:2;">↺ Distribuir auto</button>
+    <button class="tbtn" onclick="clearPay()" style="flex:1;">Limpar</button>
+  </div>
+
+  <div class="emp-card" style="margin-top:6px;">
+    <div class="emp-card-name">📊 Consolidado</div>
+    <div class="stat3">
+      <div class="stat" style="background:var(--red-bg);border:1px solid var(--red-bd);">
+        <div class="stat-lbl" style="color:var(--red)">Total</div>
+        <div class="stat-val red">168&nbsp;672,70 €</div>
+      </div>
+      <div class="stat" style="background:var(--amber-bg);border:1px solid var(--amber-bd);">
+        <div class="stat-lbl" style="color:var(--amber)">Em falta</div>
+        <div class="stat-val amber">168&nbsp;672,70 €</div>
+      </div>
+      <div class="stat" style="background:var(--green-bg);border:1px solid var(--green-bd);">
+        <div class="stat-lbl" style="color:var(--green)">Pago</div>
+        <div class="stat-val green">0,00 €</div>
+      </div>
+    </div>
+    <div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;margin-bottom:4px;"><span>progresso global</span><span>0.0%</span></div>
+      <div style="background:var(--bg2);border-radius:4px;height:8px;overflow:hidden;"><div style="height:8px;border-radius:4px;background:var(--green);width:0.0%;"></div></div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="donut-global" width="100" height="100" style="flex-shrink:0;"></canvas>
+      <div id="leg-global" class="legend">
+    <div class="leg-row">
+      <div class="leg-dot" style="background:#2a6b3c"></div>
+      <div class="leg-name">Salários</div>
+      <div class="leg-val">14&nbsp;348,62 €</div>
+    </div>
+    <div class="leg-row">
+      <div class="leg-dot" style="background:#3a3a8c"></div>
+      <div class="leg-name">Fornecedores</div>
+      <div class="leg-val">41&nbsp;522,46 €</div>
+    </div>
+    <div class="leg-row">
+      <div class="leg-dot" style="background:#4a2a8c"></div>
+      <div class="leg-name">Sócios</div>
+      <div class="leg-val">6476,00 €</div>
+    </div>
+    <div class="leg-row">
+      <div class="leg-dot" style="background:#1a4a7a"></div>
+      <div class="leg-name">Fisco</div>
+      <div class="leg-val">64&nbsp;000,00 €</div>
+    </div>
+    <div class="leg-row">
+      <div class="leg-dot" style="background:#7a3800"></div>
+      <div class="leg-name">Fornecedores</div>
+      <div class="leg-val">42&nbsp;325,62 €</div>
+    </div></div>
+    </div>
+  </div><div class="emp-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <div class="emp-card-name" style="margin-bottom:0">Colinatrum</div>
+        <span style="font-size:11px;color:var(--amber);font-family:&#39;IBM Plex Mono&#39;,monospace;">0.0% pago</span>
+      </div>
+      <div class="stat3">
+        <div class="stat" style="background:var(--red-bg);border:1px solid var(--red-bd);">
+          <div class="stat-lbl" style="color:var(--red)">Total</div>
+          <div class="stat-val red">62&nbsp;347,08 €</div>
+        </div>
+        <div class="stat" style="background:var(--amber-bg);border:1px solid var(--amber-bd);">
+          <div class="stat-lbl" style="color:var(--amber)">Em falta</div>
+          <div class="stat-val amber">62&nbsp;347,08 €</div>
+        </div>
+        <div class="stat" style="background:var(--green-bg);border:1px solid var(--green-bd);">
+          <div class="stat-lbl" style="color:var(--green)">Pago</div>
+          <div class="stat-val green">0,00 €</div>
+        </div>
+      </div>
+      <div style="margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;margin-bottom:4px;"><span>progresso</span><span>0.0%</span></div>
+        <div style="background:var(--bg2);border-radius:4px;height:6px;overflow:hidden;"><div style="height:6px;border-radius:4px;background:var(--green);width:0.0%;"></div></div>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="donut-Colinatrum" width="100" height="100" style="flex-shrink:0;"></canvas>
+        <div id="leg-Colinatrum" class="legend">
+    <div class="leg-row">
+      <div class="leg-dot" style="background:#2a6b3c"></div>
+      <div class="leg-name">Salários</div>
+      <div class="leg-val">14&nbsp;348,62 €</div>
+    </div>
+    <div class="leg-row">
+      <div class="leg-dot" style="background:#3a3a8c"></div>
+      <div class="leg-name">Fornecedores</div>
+      <div class="leg-val">41&nbsp;522,46 €</div>
+    </div>
+    <div class="leg-row">
+      <div class="leg-dot" style="background:#4a2a8c"></div>
+      <div class="leg-name">Sócios</div>
+      <div class="leg-val">6476,00 €</div>
+    </div></div>
+      </div>
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);">
+        <div style="font-size:10px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Por subfamília</div>
+        <div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span>👷</span>
+                <span style="font-size:13px;font-weight:500;">Salários</span>
+                <span style="font-size:10px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;">(11)</span>
+              </div>
+              <span style="font-size:12px;font-weight:600;font-family:&#39;IBM Plex Mono&#39;,monospace;color:var(--red);">14&nbsp;348,62 €</span>
+            </div>
+            <div style="background:var(--bg2);border-radius:4px;height:6px;overflow:hidden;">
+              <div style="height:6px;border-radius:4px;background:#2a6b3c;width:0.0%;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;margin-top:2px;">
+              <span>pago: 0,00 €</span><span>0%</span>
+            </div>
+          </div><div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span>🏪</span>
+                <span style="font-size:13px;font-weight:500;">Fornecedores</span>
+                <span style="font-size:10px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;">(13)</span>
+              </div>
+              <span style="font-size:12px;font-weight:600;font-family:&#39;IBM Plex Mono&#39;,monospace;color:var(--red);">41&nbsp;522,46 €</span>
+            </div>
+            <div style="background:var(--bg2);border-radius:4px;height:6px;overflow:hidden;">
+              <div style="height:6px;border-radius:4px;background:#3a3a8c;width:0.0%;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;margin-top:2px;">
+              <span>pago: 0,00 €</span><span>0%</span>
+            </div>
+          </div><div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span>🤝</span>
+                <span style="font-size:13px;font-weight:500;">Sócios</span>
+                <span style="font-size:10px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;">(2)</span>
+              </div>
+              <span style="font-size:12px;font-weight:600;font-family:&#39;IBM Plex Mono&#39;,monospace;color:var(--red);">6476,00 €</span>
+            </div>
+            <div style="background:var(--bg2);border-radius:4px;height:6px;overflow:hidden;">
+              <div style="height:6px;border-radius:4px;background:#4a2a8c;width:0.0%;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;margin-top:2px;">
+              <span>pago: 0,00 €</span><span>0%</span>
+            </div>
+          </div>
+      </div>
+    </div><div class="emp-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <div class="emp-card-name" style="margin-bottom:0">Ate Já</div>
+        <span style="font-size:11px;color:var(--amber);font-family:&#39;IBM Plex Mono&#39;,monospace;">0.0% pago</span>
+      </div>
+      <div class="stat3">
+        <div class="stat" style="background:var(--red-bg);border:1px solid var(--red-bd);">
+          <div class="stat-lbl" style="color:var(--red)">Total</div>
+          <div class="stat-val red">106&nbsp;325,62 €</div>
+        </div>
+        <div class="stat" style="background:var(--amber-bg);border:1px solid var(--amber-bd);">
+          <div class="stat-lbl" style="color:var(--amber)">Em falta</div>
+          <div class="stat-val amber">106&nbsp;325,62 €</div>
+        </div>
+        <div class="stat" style="background:var(--green-bg);border:1px solid var(--green-bd);">
+          <div class="stat-lbl" style="color:var(--green)">Pago</div>
+          <div class="stat-val green">0,00 €</div>
+        </div>
+      </div>
+      <div style="margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;margin-bottom:4px;"><span>progresso</span><span>0.0%</span></div>
+        <div style="background:var(--bg2);border-radius:4px;height:6px;overflow:hidden;"><div style="height:6px;border-radius:4px;background:var(--green);width:0.0%;"></div></div>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="donut-Ate_Já" width="100" height="100" style="flex-shrink:0;"></canvas>
+        <div id="leg-Ate_Já" class="legend">
+    <div class="leg-row">
+      <div class="leg-dot" style="background:#1a4a7a"></div>
+      <div class="leg-name">Fisco</div>
+      <div class="leg-val">64&nbsp;000,00 €</div>
+    </div>
+    <div class="leg-row">
+      <div class="leg-dot" style="background:#7a3800"></div>
+      <div class="leg-name">Fornecedores</div>
+      <div class="leg-val">42&nbsp;325,62 €</div>
+    </div></div>
+      </div>
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);">
+        <div style="font-size:10px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Por subfamília</div>
+        <div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span>🏛️</span>
+                <span style="font-size:13px;font-weight:500;">Fisco</span>
+                <span style="font-size:10px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;">(2)</span>
+              </div>
+              <span style="font-size:12px;font-weight:600;font-family:&#39;IBM Plex Mono&#39;,monospace;color:var(--red);">64&nbsp;000,00 €</span>
+            </div>
+            <div style="background:var(--bg2);border-radius:4px;height:6px;overflow:hidden;">
+              <div style="height:6px;border-radius:4px;background:#1a4a7a;width:0.0%;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;margin-top:2px;">
+              <span>pago: 0,00 €</span><span>0%</span>
+            </div>
+          </div><div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span>🏪</span>
+                <span style="font-size:13px;font-weight:500;">Fornecedores</span>
+                <span style="font-size:10px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;">(18)</span>
+              </div>
+              <span style="font-size:12px;font-weight:600;font-family:&#39;IBM Plex Mono&#39;,monospace;color:var(--red);">42&nbsp;325,62 €</span>
+            </div>
+            <div style="background:var(--bg2);border-radius:4px;height:6px;overflow:hidden;">
+              <div style="height:6px;border-radius:4px;background:#7a3800;width:0.0%;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);font-family:&#39;IBM Plex Mono&#39;,monospace;margin-top:2px;">
+              <span>pago: 0,00 €</span><span>0%</span>
             </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(29,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(29)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(30)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Recheio</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">5775,43 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-30" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(30,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(30)">✓ Marcar como concluído (5775,43 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Recheio" onchange="updateRow(30,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(30,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="5775.43" onchange="updateRow(30,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(30,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(30)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(31)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Rosa Artur</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">4735,67 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-31" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(31,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(31)">✓ Marcar como concluído (4735,67 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Rosa Artur" onchange="updateRow(31,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(31,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="4735.67" onchange="updateRow(31,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(31,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(31)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(32)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Polido &amp; Carvalho</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">4500,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-32" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(32,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(32)">✓ Marcar como concluído (4500,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Polido &amp; Carvalho" onchange="updateRow(32,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(32,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="4500.00" onchange="updateRow(32,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(32,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(32)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(33)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Suminho (Ate Já)</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">4047,55 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-33" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(33,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(33)">✓ Marcar como concluído (4047,55 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Suminho (Ate Já)" onchange="updateRow(33,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(33,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="4047.55" onchange="updateRow(33,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(33,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(33)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(34)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Padaria de Dume</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">3726,93 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-34" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(34,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(34)">✓ Marcar como concluído (3726,93 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Padaria de Dume" onchange="updateRow(34,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(34,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="3726.93" onchange="updateRow(34,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(34,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(34)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(35)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Rita contabilidade</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">2902,80 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-35" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(35,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(35)">✓ Marcar como concluído (2902,80 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Rita contabilidade" onchange="updateRow(35,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(35,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="2902.80" onchange="updateRow(35,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(35,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(35)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(36)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Hugo</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">2000,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-36" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(36,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(36)">✓ Marcar como concluído (2000,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Hugo" onchange="updateRow(36,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(36,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="2000.00" onchange="updateRow(36,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(36,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(36)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(37)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Uminho</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">1750,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-37" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(37,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(37)">✓ Marcar como concluído (1750,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Uminho" onchange="updateRow(37,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(37,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="1750.00" onchange="updateRow(37,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(37,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(37)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(38)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Pontes</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">1100,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-38" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(38,this.value)">
           </div>
-
-          <button class="concluido-btn" onclick="concluido(38)">✓ Marcar como concluído (1100,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Pontes" onchange="updateRow(38,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(38,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="1100.00" onchange="updateRow(38,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(38,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(38)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(39)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Norsnack</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">885,36 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-39" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(39,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(39)">✓ Marcar como concluído (885,36 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Norsnack" onchange="updateRow(39,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(39,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="885.36" onchange="updateRow(39,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(39,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(39)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(40)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">J.Freitas</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">849,66 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-40" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(40,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(40)">✓ Marcar como concluído (849,66 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="J.Freitas" onchange="updateRow(40,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(40,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="849.66" onchange="updateRow(40,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(40,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(40)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(41)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Caixas</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">850,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-41" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(41,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(41)">✓ Marcar como concluído (850,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Caixas" onchange="updateRow(41,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(41,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="850.00" onchange="updateRow(41,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(41,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(41)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(42)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Sacos</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">787,22 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-42" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(42,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(42)">✓ Marcar como concluído (787,22 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Sacos" onchange="updateRow(42,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(42,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="787.22" onchange="updateRow(42,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(42,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(42)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(43)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">DIVA</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">600,00 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-43" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(43,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(43)">✓ Marcar como concluído (600,00 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="DIVA" onchange="updateRow(43,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(43,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="600.00" onchange="updateRow(43,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(43,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(43)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(44)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Danke</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">362,28 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-44" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(44,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(44)">✓ Marcar como concluído (362,28 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Danke" onchange="updateRow(44,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(44,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="362.28" onchange="updateRow(44,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(44,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(44)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(45)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Priscos</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">298,89 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-45" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(45,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(45)">✓ Marcar como concluído (298,89 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Priscos" onchange="updateRow(45,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(45,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="298.89" onchange="updateRow(45,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(45,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(45)">× Apagar este credor</button>
-        </div>
-      </div>
-    </div><div class="row ">
-      <div class="row-main" onclick="toggleRow(46)">
-        <div class="row-stripe" style="background:#7a3800"></div>
-        <div class="row-info">
-          <div class="row-name">Desconhecido</div>
-          <div class="row-tipo">FORNECEDOR · Ate Já</div>
-        </div>
-        <div class="row-right">
-          <div class="row-amount ">153,83 €</div>
-          
-          <span class="row-badge b-gray">POR PAGAR</span>
-        </div>
-      </div>
-      <div class="row-detail ">
-        <div class="detail-inner">
-          
-
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-46" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(46,this.value)">
-          </div>
-
-          <button class="concluido-btn" onclick="concluido(46)">✓ Marcar como concluído (153,83 €)</button>
-
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="Desconhecido" onchange="updateRow(46,&#39;name&#39;,this.value)">
-            </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(46,&#39;tipo&#39;,this.value)">
-                <option value="salario">Salário</option>
-                <option selected="" value="fornecedor">Fornecedor</option>
-                <option value="fisco">Fisco</option>
-                <option value="socio">Sócio</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="153.83" onchange="updateRow(46,&#39;amount&#39;,parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(46,&#39;empresa&#39;,this.value)">
-                <option>Colinatrum</option>
-                <option selected="">Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(46)">× Apagar este credor</button>
-        </div>
       </div>
     </div></div>
+<div class="page" id="pg-col"></div>
+<div class="page" id="pg-atj"></div>
+
+<!-- BOTTOM NAV -->
+<div class="bnav">
+  <button class="bnav-btn active" onclick="goPage(&#39;overview&#39;,this)"><span class="ico">📊</span>Visão Geral</button>
+  <button class="bnav-btn" onclick="goPage(&#39;col&#39;,this)"><span class="ico">🏢</span>Colinatrum</button>
+  <button class="bnav-btn" onclick="goPage(&#39;atj&#39;,this)"><span class="ico">🏪</span>Ate Já</button>
+</div>
 
 <button class="fab" onclick="openModal()">+</button>
 
-<div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
+<!-- ADD MODAL -->
+<div class="modal-bg" id="modal-bg" onclick="if(event.target===this)closeModal()">
   <div class="modal">
-    <div class="modal-title">Adicionar credor</div>
-    <div class="modal-opt" onclick="startAdd(&#39;Colinatrum&#39;);closeModalDirect()">
-      <div class="modal-opt-icon" style="background:var(--col-bg);color:var(--col);border:1px solid var(--col-border)">COL</div>
-      <div><div class="modal-opt-label">Colinatrum</div><div class="modal-opt-sub">Novo credor no Colinatrum</div></div>
+    <div class="modal-title">Adicionar credor a...</div>
+    <div id="modal-opts"></div>
+  </div>
+</div>
+
+<!-- SUBFAM MODAL -->
+<div class="modal-bg" id="sf-modal-bg" onclick="if(event.target===this)closeSfModal()">
+  <div class="modal">
+    <div class="modal-title">Nova Subfamília</div>
+    <div class="field"><label>Nome da subfamília</label><input type="text" id="sf-name-inp" placeholder="Ex: Rendas, Seguros..."></div>
+    <div class="field"><label>Empresa</label>
+      <select id="sf-emp-sel">
+        <option>Colinatrum</option>
+        <option>Ate Já</option>
+      </select>
     </div>
-    <div class="modal-opt" onclick="startAdd(&#39;Ate Já&#39;);closeModalDirect()">
-      <div class="modal-opt-icon" style="background:var(--atj-bg);color:var(--atj);border:1px solid var(--atj-border)">ATJ</div>
-      <div><div class="modal-opt-label">Ate Já</div><div class="modal-opt-sub">Novo credor no Ate Já</div></div>
+    <div style="display:flex;gap:8px;margin-top:4px;">
+      <button class="tbtn p" onclick="confirmAddSf()" style="flex:2;padding:12px;">Criar subfamília</button>
+      <button class="tbtn" onclick="closeSfModal()" style="flex:1;padding:12px;">Cancelar</button>
     </div>
   </div>
 </div>
 
 <script>
-const SK='gestao_passivo_v3';
+const SK='gp_v5';
+const ICONS=['👷','🏪','🏛️','🤝','📦','🚗','💡','🏗️','📋','🍕'];
+
+// SUBFAMILIAS — dinâmicas por empresa
+let subfams={
+  'Colinatrum':[
+    {key:'salario',label:'Salários',icon:'👷',color:'#2a6b3c',bg:'#e8f4ec',bd:'#b8ddc4'},
+    {key:'fornecedor',label:'Fornecedores',icon:'🏪',color:'#3a3a8c',bg:'#eeeef8',bd:'#c4c4e8'},
+    {key:'socio',label:'Sócios',icon:'🤝',color:'#4a2a8c',bg:'#f0eefa',bd:'#c8b8ec'},
+  ],
+  'Ate Já':[
+    {key:'fisco',label:'Fisco',icon:'🏛️',color:'#1a4a7a',bg:'#e8f0fa',bd:'#b8ccec'},
+    {key:'fornecedor_atj',label:'Fornecedores',icon:'🏪',color:'#7a3800',bg:'#fdf0e4',bd:'#e8c8a0'},
+  ]
+};
+
 let rows=[
   {id:1,name:"Gilson",amount:2954.00,pagar:0,empresa:"Colinatrum",tipo:"salario"},
   {id:2,name:"Edson",amount:2164.53,pagar:0,empresa:"Colinatrum",tipo:"salario"},
@@ -2746,67 +462,69 @@ let rows=[
   {id:26,name:"João (sócio)",amount:2552.00,pagar:0,empresa:"Colinatrum",tipo:"socio"},
   {id:27,name:"AT (Fisco)",amount:31500.00,pagar:0,empresa:"Ate Já",tipo:"fisco"},
   {id:28,name:"SS (Seg. Social)",amount:32500.00,pagar:0,empresa:"Ate Já",tipo:"fisco"},
-  {id:29,name:"Rendas",amount:7000.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:30,name:"Recheio",amount:5775.43,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:31,name:"Rosa Artur",amount:4735.67,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:32,name:"Polido & Carvalho",amount:4500.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:33,name:"Suminho (Ate Já)",amount:4047.55,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:34,name:"Padaria de Dume",amount:3726.93,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:35,name:"Rita contabilidade",amount:2902.80,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:36,name:"Hugo",amount:2000.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:37,name:"Uminho",amount:1750.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:38,name:"Pontes",amount:1100.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:39,name:"Norsnack",amount:885.36,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:40,name:"J.Freitas",amount:849.66,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:41,name:"Caixas",amount:850.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:42,name:"Sacos",amount:787.22,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:43,name:"DIVA",amount:600.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:44,name:"Danke",amount:362.28,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:45,name:"Priscos",amount:298.89,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
-  {id:46,name:"Desconhecido",amount:153.83,pagar:0,empresa:"Ate Já",tipo:"fornecedor"},
+  {id:29,name:"Rendas",amount:7000.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:30,name:"Recheio",amount:5775.43,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:31,name:"Rosa Artur",amount:4735.67,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:32,name:"Polido & Carvalho",amount:4500.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:33,name:"Suminho (Ate Já)",amount:4047.55,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:34,name:"Padaria de Dume",amount:3726.93,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:35,name:"Rita contabilidade",amount:2902.80,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:36,name:"Hugo",amount:2000.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:37,name:"Uminho",amount:1750.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:38,name:"Pontes",amount:1100.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:39,name:"Norsnack",amount:885.36,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:40,name:"J.Freitas",amount:849.66,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:41,name:"Caixas",amount:850.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:42,name:"Sacos",amount:787.22,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:43,name:"DIVA",amount:600.00,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:44,name:"Danke",amount:362.28,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:45,name:"Priscos",amount:298.89,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
+  {id:46,name:"Desconhecido",amount:153.83,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
 ];
-let currentTab='all',expandedId=null,nextId=100,saveTimer=null;
 
+let curPage='overview', expandedId=null, openSf={}, nextId=100, saveTimer=null;
+
+// ── STORAGE ──
 function load(){
   try{
     const d=JSON.parse(localStorage.getItem(SK));
-    if(d){rows=d.rows;nextId=d.nextId||100;
+    if(d){
+      rows=d.rows; nextId=d.nextId||100;
+      openSf=d.openSf||{};
+      if(d.subfams) subfams=d.subfams;
       document.getElementById('i-caixa').value=d.caixa||33270;
       document.getElementById('i-alm').value=d.alm||10000;
     }
   }catch(e){}
 }
-
 function save(){
   clearTimeout(saveTimer);
   saveTimer=setTimeout(()=>{
-    localStorage.setItem(SK,JSON.stringify({rows,nextId,
+    localStorage.setItem(SK,JSON.stringify({
+      rows,nextId,openSf,subfams,
       caixa:parseFloat(document.getElementById('i-caixa').value)||0,
-      alm:parseFloat(document.getElementById('i-alm').value)||0}));
-    const t=document.getElementById('saved-tag');
-    t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);
+      alm:parseFloat(document.getElementById('i-alm').value)||0
+    }));
+    const t=document.getElementById('sv');
+    t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2000);
   },500);
 }
 
+// ── HELPERS ──
 function fmt(n){return n.toLocaleString('pt-PT',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function getBudget(){return Math.max(0,(parseFloat(document.getElementById('i-caixa').value)||0)-(parseFloat(document.getElementById('i-alm').value)||0));}
-
-function getStripe(tipo,empresa){
-  if(tipo==='salario')return'#2a6b3c';
-  if(tipo==='fisco')return'#1a4a7a';
-  if(tipo==='socio')return'#5a3a8c';
-  return empresa==='Colinatrum'?'#3a3a8c':'#7a3800';
-}
+function getSf(empresa,tipo){return (subfams[empresa]||[]).find(s=>s.key===tipo);}
 
 function getBadge(r){
-  if(r.tipo==='fisco')return'<span class="row-badge b-blue">PRESTAÇÕES</span>';
+  if(r.tipo==='fisco') return '<span class="cbadge b-blue">PRESTAÇÕES</span>';
   const p=r.pagar||0;
-  if(p<=0)return'<span class="row-badge b-gray">POR PAGAR</span>';
-  if(p>=r.amount)return'<span class="row-badge b-green">✓ CONCLUÍDO</span>';
-  return'<span class="row-badge b-amber">SINAL DADO</span>';
+  if(p<=0) return '<span class="cbadge b-gray">POR PAGAR</span>';
+  if(p>=r.amount) return '<span class="cbadge b-green">✓ PAGO</span>';
+  return '<span class="cbadge b-amber">PARCIAL</span>';
 }
 
-function update(){
+// ── UPDATE HEADER ──
+function upd(){
   const budget=getBudget();
   let tp=0,td=0;
   rows.forEach(r=>{td+=r.amount;tp+=(r.pagar||0);});
@@ -2820,149 +538,363 @@ function update(){
   document.getElementById('bar-fill').style.width=pct.toFixed(1)+'%';
   document.getElementById('bar-fill').style.background=over?'#8b2020':pct>85?'#7a5200':'#2a6b3c';
   document.getElementById('bar-pct').textContent=pct.toFixed(0)+'%';
-  document.getElementById('over-warn').style.display=over?'block':'none';
+  document.getElementById('ovr').style.display=over?'block':'none';
   render();
 }
 
-function setTab(tab,el){
-  currentTab=tab;
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');render();
+// ── NAVIGATION ──
+function goPage(p,el){
+  curPage=p; expandedId=null;
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.getElementById('pg-'+p).classList.add('active');
+  document.querySelectorAll('.bnav-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  render();
 }
 
-function filtered(){
-  if(currentTab==='all')return rows;
-  if(currentTab==='Colinatrum'||currentTab==='Ate Já')return rows.filter(r=>r.empresa===currentTab);
-  return rows.filter(r=>r.tipo===currentTab);
-}
-
-function concluido(id){
-  const r=rows.find(x=>x.id===id);
-  if(!r)return;
-  // read current pay input value
-  const inp=document.getElementById('pay-inp-'+id);
-  if(inp){r.pagar=parseFloat(inp.value)||0;}
-  // mark as fully paid
-  r.pagar=r.amount;
-  expandedId=null;
-  save();update();
-}
-
+// ── RENDER ──
 function render(){
-  const list=document.getElementById('list');
-  const vis=filtered();
-  if(!vis.length){list.innerHTML='<div class="empty">— sem credores nesta categoria —</div>';return;}
-  let html='',lastEmp='';
-  const showGroup=currentTab==='all'||currentTab==='salario'||currentTab==='fornecedor'||currentTab==='fisco'||currentTab==='socio';
-  vis.forEach(r=>{
-    if(showGroup&&r.empresa!==lastEmp){
-      lastEmp=r.empresa;
-      const ef=rows.filter(x=>x.empresa===r.empresa).reduce((s,x)=>s+Math.max(0,x.amount-(x.pagar||0)),0);
-      html+=`<div class="group-header"><span>${r.empresa.toUpperCase()}</span><span class="group-total">${fmt(ef)} € em falta</span></div>`;
-    }
-    const pago=r.pagar||0;
-    const resta=Math.max(0,r.amount-pago);
-    const isExp=expandedId===r.id;
-    const isPaid=pago>=r.amount&&pago>0;
-    html+=`<div class="row ${isExp?'expanded':''}">
-      <div class="row-main" onclick="toggleRow(${r.id})">
-        <div class="row-stripe" style="background:${getStripe(r.tipo,r.empresa)}"></div>
-        <div class="row-info">
-          <div class="row-name">${r.name}</div>
-          <div class="row-tipo">${r.tipo.toUpperCase()} · ${r.empresa}</div>
+  if(curPage==='overview') renderOverview();
+  else if(curPage==='col') renderEmpresa('Colinatrum','pg-col');
+  else if(curPage==='atj') renderEmpresa('Ate Já','pg-atj');
+}
+
+function renderOverview(){
+  const empresas=['Colinatrum','Ate Já'];
+  const totalDiv=rows.reduce((s,r)=>s+r.amount,0);
+  const totalPago=rows.reduce((s,r)=>s+(r.pagar||0),0);
+  const totalFalta=Math.max(0,totalDiv-totalPago);
+  const pctG=totalDiv>0?(totalPago/totalDiv*100):0;
+
+  let html=`<div style="display:flex;gap:6px;padding-bottom:6px;">
+    <button class="tbtn p" onclick="autoFill()" style="flex:2;">↺ Distribuir auto</button>
+    <button class="tbtn" onclick="clearPay()" style="flex:1;">Limpar</button>
+  </div>
+
+  <div class="emp-card" style="margin-top:6px;">
+    <div class="emp-card-name">📊 Consolidado</div>
+    <div class="stat3">
+      <div class="stat" style="background:var(--red-bg);border:1px solid var(--red-bd);">
+        <div class="stat-lbl" style="color:var(--red)">Total</div>
+        <div class="stat-val red">${fmt(totalDiv)} €</div>
+      </div>
+      <div class="stat" style="background:var(--amber-bg);border:1px solid var(--amber-bd);">
+        <div class="stat-lbl" style="color:var(--amber)">Em falta</div>
+        <div class="stat-val amber">${fmt(totalFalta)} €</div>
+      </div>
+      <div class="stat" style="background:var(--green-bg);border:1px solid var(--green-bd);">
+        <div class="stat-lbl" style="color:var(--green)">Pago</div>
+        <div class="stat-val green">${fmt(totalPago)} €</div>
+      </div>
+    </div>
+    <div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-bottom:4px;"><span>progresso global</span><span>${pctG.toFixed(1)}%</span></div>
+      <div style="background:var(--bg2);border-radius:4px;height:8px;overflow:hidden;"><div style="height:8px;border-radius:4px;background:var(--green);width:${pctG.toFixed(1)}%;"></div></div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="donut-global" width="100" height="100" style="flex-shrink:0;"></canvas>
+      <div id="leg-global" class="legend"></div>
+    </div>
+  </div>`;
+
+  empresas.forEach(emp=>{
+    const er=rows.filter(r=>r.empresa===emp);
+    const eTotal=er.reduce((s,r)=>s+r.amount,0);
+    const ePago=er.reduce((s,r)=>s+(r.pagar||0),0);
+    const eFalta=Math.max(0,eTotal-ePago);
+    const pct=eTotal>0?(ePago/eTotal*100):0;
+    const id='donut-'+emp.replace(/\s/g,'_');
+    html+=`<div class="emp-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <div class="emp-card-name" style="margin-bottom:0">${emp}</div>
+        <span style="font-size:11px;color:${pct>=100?'var(--green)':'var(--amber)'};font-family:'IBM Plex Mono',monospace;">${pct.toFixed(1)}% pago</span>
+      </div>
+      <div class="stat3">
+        <div class="stat" style="background:var(--red-bg);border:1px solid var(--red-bd);">
+          <div class="stat-lbl" style="color:var(--red)">Total</div>
+          <div class="stat-val red">${fmt(eTotal)} €</div>
         </div>
-        <div class="row-right">
-          <div class="row-amount ${isPaid?'paid':''}">${fmt(resta)} €</div>
-          ${pago>0&&!isPaid?`<div class="row-paid">pago: ${fmt(pago)}</div>`:''}
-          ${getBadge(r)}
+        <div class="stat" style="background:var(--amber-bg);border:1px solid var(--amber-bd);">
+          <div class="stat-lbl" style="color:var(--amber)">Em falta</div>
+          <div class="stat-val amber">${fmt(eFalta)} €</div>
+        </div>
+        <div class="stat" style="background:var(--green-bg);border:1px solid var(--green-bd);">
+          <div class="stat-lbl" style="color:var(--green)">Pago</div>
+          <div class="stat-val green">${fmt(ePago)} €</div>
         </div>
       </div>
-      <div class="row-detail ${isExp?'open':''}">
-        <div class="detail-inner">
-          ${r.tipo==='fisco'?'<div class="fisco-note">⚠️ Não pagar de uma vez — pede plano de prestações ao fisco.</div>':''}
+      <div style="margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-bottom:4px;"><span>progresso</span><span>${pct.toFixed(1)}%</span></div>
+        <div style="background:var(--bg2);border-radius:4px;height:6px;overflow:hidden;"><div style="height:6px;border-radius:4px;background:var(--green);width:${pct.toFixed(1)}%;"></div></div>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="${id}" width="100" height="100" style="flex-shrink:0;"></canvas>
+        <div id="leg-${emp.replace(/\s/g,'_')}" class="legend"></div>
+      </div>
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);">
+        <div style="font-size:10px;color:var(--muted);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Por subfamília</div>
+        ${(subfams[emp]||[]).map(sf=>{
+          const sfR=er.filter(r=>r.tipo===sf.key);
+          const sfT=sfR.reduce((s,r)=>s+r.amount,0);
+          const sfP=sfR.reduce((s,r)=>s+(r.pagar||0),0);
+          const sfF=Math.max(0,sfT-sfP);
+          const sfPct=sfT>0?(sfP/sfT*100):0;
+          return `<div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span>${sf.icon}</span>
+                <span style="font-size:13px;font-weight:500;">${sf.label}</span>
+                <span style="font-size:10px;color:var(--muted);font-family:'IBM Plex Mono',monospace;">(${sfR.length})</span>
+              </div>
+              <span style="font-size:12px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:${sfF===0?'var(--green)':'var(--red)'};">${fmt(sfF)} €</span>
+            </div>
+            <div style="background:var(--bg2);border-radius:4px;height:6px;overflow:hidden;">
+              <div style="height:6px;border-radius:4px;background:${sf.color};width:${sfPct.toFixed(1)}%;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-top:2px;">
+              <span>pago: ${fmt(sfP)} €</span><span>${sfPct.toFixed(0)}%</span>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  });
 
-          <div class="pay-section">
-            <div class="pay-section-label">💰 Valor a pagar agora</div>
-            <input class="pay-field" id="pay-inp-${r.id}" type="number" inputmode="decimal" pattern="[0-9]*" value="${pago>0?pago.toFixed(2):'0.00'}" placeholder="0.00" onfocus="this.select()" onchange="updatePagar(${r.id},this.value)">
-          </div>
+  document.getElementById('pg-overview').innerHTML=html;
 
-          <button class="concluido-btn" onclick="concluido(${r.id})">✓ Marcar como concluído (${fmt(r.amount)} €)</button>
+  // Draw donuts
+  setTimeout(()=>{
+    drawDonut('donut-global','leg-global',rows,
+      Object.values(subfams).flat().filter((s,i,a)=>a.findIndex(x=>x.key===s.key)===i));
+    empresas.forEach(emp=>{
+      const id=emp.replace(/\s/g,'_');
+      drawDonut('donut-'+id,'leg-'+id,rows.filter(r=>r.empresa===emp),subfams[emp]||[]);
+    });
+  },50);
+}
 
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Nome</label>
-              <input type="text" value="${r.name}" onchange="updateRow(${r.id},'name',this.value)">
+function drawDonut(canvasId,legendId,data,sfs){
+  const canvas=document.getElementById(canvasId);
+  const leg=document.getElementById(legendId);
+  if(!canvas||!leg) return;
+  const ctx=canvas.getContext('2d');
+  const segs=[];
+  sfs.forEach(sf=>{
+    const total=data.filter(r=>r.tipo===sf.key).reduce((s,r)=>s+r.amount,0);
+    const pago=data.filter(r=>r.tipo===sf.key).reduce((s,r)=>s+(r.pagar||0),0);
+    const falta=Math.max(0,total-pago);
+    if(falta>0) segs.push({label:sf.label,value:falta,color:sf.color,pago,total});
+  });
+  const total=segs.reduce((s,sg)=>s+sg.value,0);
+  if(total===0){canvas.style.display='none';leg.innerHTML='<span style="color:var(--green);font-size:12px;">✓ Tudo pago!</span>';return;}
+  const cx=50,cy=50,r=44,inner=26;
+  ctx.clearRect(0,0,100,100);
+  let angle=-Math.PI/2;
+  segs.forEach(sg=>{
+    const sweep=(sg.value/total)*2*Math.PI;
+    ctx.beginPath();ctx.moveTo(cx,cy);
+    ctx.arc(cx,cy,r,angle,angle+sweep);
+    ctx.closePath();ctx.fillStyle=sg.color;ctx.fill();
+    angle+=sweep;
+  });
+  ctx.beginPath();ctx.arc(cx,cy,inner,0,2*Math.PI);
+  ctx.fillStyle='#faf7f2';ctx.fill();
+  leg.innerHTML=segs.map(sg=>`
+    <div class="leg-row">
+      <div class="leg-dot" style="background:${sg.color}"></div>
+      <div class="leg-name">${sg.label}</div>
+      <div class="leg-val">${fmt(sg.value)} €</div>
+    </div>`).join('');
+}
+
+function renderEmpresa(empresa,pgId){
+  const sfs=subfams[empresa]||[];
+  const er=rows.filter(r=>r.empresa===empresa);
+  const eTotal=er.reduce((s,r)=>s+r.amount,0);
+  const ePago=er.reduce((s,r)=>s+(r.pagar||0),0);
+
+  let html=`<div style="display:flex;gap:6px;padding-bottom:10px;">
+    <button class="tbtn p" onclick="autoFill()" style="flex:2;">↺ Distribuir auto</button>
+    <button class="tbtn" onclick="clearPay()" style="flex:1;">Limpar</button>
+  </div>`;
+
+  sfs.forEach(sf=>{
+    const sfR=er.filter(r=>r.tipo===sf.key);
+    const sfT=sfR.reduce((s,r)=>s+r.amount,0);
+    const sfP=sfR.reduce((s,r)=>s+(r.pagar||0),0);
+    const sfF=Math.max(0,sfT-sfP);
+    const isOpen=!!openSf[empresa+'|'+sf.key];
+    const allPaid=sfR.length>0&&sfR.every(r=>(r.pagar||0)>=r.amount);
+
+    html+=`<div class="sfblock">
+      <div class="sfhdr" onclick="toggleSf('${empresa}','${sf.key}')">
+        <div class="sficon" style="background:${sf.bg};border:1px solid ${sf.bd}">${sf.icon}</div>
+        <div class="sfinfo">
+          <div class="sfname">${sf.label}</div>
+          <div class="sfmeta">${sfR.length} credores · ${sf.key==='fisco'?'prestações':'sinal proporcional'}</div>
+        </div>
+        <div class="sfright">
+          <div class="sftotal ${allPaid?'ok':''}">${fmt(sfF)} €</div>
+        </div>
+        <span class="sfchev ${isOpen?'open':''}">▼</span>
+      </div>
+      <div class="sfbody ${isOpen?'open':''}">
+        ${sfR.length===0?'<div class="empty" style="padding:16px">— sem credores —</div>':''}
+        ${sfR.map(r=>{
+          const pago=r.pagar||0;
+          const resta=Math.max(0,r.amount-pago);
+          const isPaid=pago>=r.amount&&pago>0;
+          const isExp=expandedId===r.id;
+          return `<div class="cr">
+            <div class="cr-main" onclick="toggleCr(${r.id})">
+              <div class="cr-stripe" style="background:${sf.color}"></div>
+              <div class="cr-info">
+                <div class="cr-name">${r.name}</div>
+                <div class="cr-sub">dívida: ${fmt(r.amount)} €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ${isPaid?'ok':''}">${fmt(resta)} €</div>
+                ${pago>0&&!isPaid?`<div class="cr-pago">pago: ${fmt(pago)}</div>`:''}
+                ${getBadge(r)}
+              </div>
             </div>
-            <div class="field">
-              <label>Tipo</label>
-              <select onchange="updateRow(${r.id},'tipo',this.value)">
-                <option ${r.tipo==='salario'?'selected':''} value="salario">Salário</option>
-                <option ${r.tipo==='fornecedor'?'selected':''} value="fornecedor">Fornecedor</option>
-                <option ${r.tipo==='fisco'?'selected':''} value="fisco">Fisco</option>
-                <option ${r.tipo==='socio'?'selected':''} value="socio">Sócio</option>
-              </select>
+            <div class="cr-detail ${isExp?'open':''}">
+              <div class="dp">
+                ${r.tipo==='fisco'?'<div class="fisco-note">⚠️ Não pagar de uma vez — pede plano de prestações ao fisco. O fisco aceita regularizações.</div>':''}
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-${r.id}" type="number" inputmode="decimal" pattern="[0-9]*" value="${pago>0?pago.toFixed(2):'0.00'}" onfocus="this.select()" onchange="updPagar(${r.id},this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(${r.id})">✓ Marcar como concluído — ${fmt(r.amount)} €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="${r.name}" onchange="updRow(${r.id},'name',this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="${r.amount.toFixed(2)}" onchange="updRow(${r.id},'amount',parseFloat(this.value)||0)"></div>
+                </div>
+                <button class="del-btn" onclick="delRow(${r.id})">× Apagar este credor</button>
+              </div>
             </div>
-          </div>
-          <div class="field-row" style="margin-bottom:10px;">
-            <div class="field">
-              <label>Dívida total (€)</label>
-              <input type="number" inputmode="decimal" value="${r.amount.toFixed(2)}" onchange="updateRow(${r.id},'amount',parseFloat(this.value)||0)">
-            </div>
-            <div class="field">
-              <label>Empresa</label>
-              <select onchange="updateRow(${r.id},'empresa',this.value)">
-                <option ${r.empresa==='Colinatrum'?'selected':''}>Colinatrum</option>
-                <option ${r.empresa==='Ate Já'?'selected':''}>Ate Já</option>
-              </select>
-            </div>
-          </div>
-          <button class="del-btn" onclick="deleteRow(${r.id})">× Apagar este credor</button>
+          </div>`;
+        }).join('')}
+        <div class="add-sf-btn" onclick="addCredor('${empresa}','${sf.key}')">
+          <span style="font-size:18px;font-weight:300">+</span> Adicionar a ${sf.label}
         </div>
       </div>
     </div>`;
   });
-  list.innerHTML=html;
+
+  // Button to add new subfamilia
+  html+=`<div style="margin-top:4px;">
+    <button class="tbtn" style="width:100%;padding:11px;" onclick="openSfModal('${empresa}')">+ Nova subfamília em ${empresa}</button>
+  </div>`;
+
+  document.getElementById(pgId).innerHTML=html;
 }
 
-function toggleRow(id){expandedId=expandedId===id?null:id;render();}
+function toggleSf(emp,key){
+  const k=emp+'|'+key;
+  openSf[k]=!openSf[k];
+  save(); render();
+}
 
-function updatePagar(id,val){
+function toggleCr(id){
+  expandedId=expandedId===id?null:id;
+  render();
+  if(expandedId){
+    setTimeout(()=>{
+      const el=document.getElementById('pi-'+id);
+      if(el) el.closest('.cr').scrollIntoView({behavior:'smooth',block:'center'});
+    },100);
+  }
+}
+
+function updPagar(id,val){
   const r=rows.find(x=>x.id===id);
-  if(r){r.pagar=Math.min(r.amount,parseFloat(val)||0);save();update();}
+  if(r){r.pagar=Math.min(r.amount,Math.max(0,parseFloat(val)||0));save();upd();}
 }
 
-function updateRow(id,field,val){
+function concluido(id){
   const r=rows.find(x=>x.id===id);
-  if(r){r[field]=val;save();update();}
+  if(r){r.pagar=r.amount;expandedId=null;save();upd();}
 }
 
-function deleteRow(id){
+function updRow(id,field,val){
+  const r=rows.find(x=>x.id===id);
+  if(r){r[field]=val;save();upd();}
+}
+
+function delRow(id){
   if(!confirm('Apagar este credor?'))return;
-  rows=rows.filter(x=>x.id!==id);expandedId=null;save();update();
+  rows=rows.filter(x=>x.id!==id);expandedId=null;save();upd();
 }
 
 function autoFill(){
-  const budget=getBudget();let restante=budget;
+  const budget=getBudget();let rest=budget;
   rows.forEach(r=>r.pagar=0);
-  rows.filter(r=>r.tipo==='salario').forEach(r=>{const p=Math.min(r.amount,restante);r.pagar=p;restante=Math.max(0,restante-p);});
-  const forn=rows.filter(r=>r.tipo==='fornecedor');
+  rows.filter(r=>r.tipo==='salario').forEach(r=>{const p=Math.min(r.amount,rest);r.pagar=p;rest=Math.max(0,rest-p);});
+  const forn=rows.filter(r=>r.tipo!=='salario'&&r.tipo!=='fisco'&&r.tipo!=='socio');
   const tf=forn.reduce((s,r)=>s+r.amount,0);
-  forn.forEach(r=>{const pct=tf>0?r.amount/tf:0;r.pagar=Math.min(r.amount,parseFloat((restante*pct).toFixed(2)));});
-  save();update();
+  forn.forEach(r=>{const pct=tf>0?r.amount/tf:0;r.pagar=Math.min(r.amount,parseFloat((rest*pct).toFixed(2)));});
+  save();upd();
 }
 
-function clearPay(){rows.forEach(r=>r.pagar=0);save();update();}
-function openModal(){document.getElementById('modal-bg').classList.add('open');}
-function closeModal(e){if(e.target===document.getElementById('modal-bg'))closeModalDirect();}
-function closeModalDirect(){document.getElementById('modal-bg').classList.remove('open');}
+function clearPay(){rows.forEach(r=>r.pagar=0);save();upd();}
 
-function startAdd(empresa){
-  const nr={id:nextId++,name:'Novo credor',amount:0,pagar:0,empresa,tipo:'fornecedor'};
-  rows.push(nr);expandedId=nr.id;save();update();
-  setTimeout(()=>{const el=document.querySelector(`[id="pay-inp-${nr.id}"]`);if(el)el.closest('.row').scrollIntoView({behavior:'smooth',block:'center'});},200);
+// ADD CREDOR
+function addCredor(empresa,tipo){
+  const nr={id:nextId++,name:'Novo credor',amount:0,pagar:0,empresa,tipo};
+  rows.push(nr);
+  openSf[empresa+'|'+tipo]=true;
+  expandedId=nr.id;
+  save();upd();
+  setTimeout(()=>{
+    const el=document.getElementById('pi-'+nr.id);
+    if(el) el.closest('.cr').scrollIntoView({behavior:'smooth',block:'center'});
+  },200);
 }
 
-load();update();
+// ADD SUBFAMILIA
+function openSfModal(emp){
+  document.getElementById('sf-emp-sel').value=emp;
+  document.getElementById('sf-name-inp').value='';
+  document.getElementById('sf-modal-bg').classList.add('open');
+}
+function closeSfModal(){document.getElementById('sf-modal-bg').classList.remove('open');}
+function confirmAddSf(){
+  const name=document.getElementById('sf-name-inp').value.trim();
+  const emp=document.getElementById('sf-emp-sel').value;
+  if(!name)return;
+  const key='sf_'+Date.now();
+  const icon=ICONS[Math.floor(Math.random()*ICONS.length)];
+  const colors=['#2a6b3c','#3a3a8c','#7a3800','#1a4a7a','#4a2a8c','#6b2a2a'];
+  const bgs=['#e8f4ec','#eeeef8','#fdf0e4','#e8f0fa','#f0eefa','#faeaea'];
+  const bds=['#b8ddc4','#c4c4e8','#e8c8a0','#b8ccec','#c8b8ec','#ddb8b8'];
+  const ci=subfams[emp]?subfams[emp].length%colors.length:0;
+  if(!subfams[emp]) subfams[emp]=[];
+  subfams[emp].push({key,label:name,icon,color:colors[ci],bg:bgs[ci],bd:bds[ci]});
+  openSf[emp+'|'+key]=true;
+  closeSfModal();
+  save();upd();
+}
+
+// MODAL ADD CREDOR
+function openModal(){
+  const opts=document.getElementById('modal-opts');
+  let html='';
+  ['Colinatrum','Ate Já'].forEach(emp=>{
+    const sfs=subfams[emp]||[];
+    sfs.forEach(sf=>{
+      html+=`<div class="mopt" onclick="addCredor('${emp}','${sf.key}');closeModal()">
+        <div class="micon" style="background:${sf.bg};border:1px solid ${sf.bd};color:${sf.color}">${sf.icon}</div>
+        <div><div class="mlbl">${emp} · ${sf.label}</div><div class="msub">Adicionar credor</div></div>
+      </div>`;
+    });
+  });
+  opts.innerHTML=html;
+  document.getElementById('modal-bg').classList.add('open');
+}
+function closeModal(){document.getElementById('modal-bg').classList.remove('open');}
+
+load();upd();
 </script>
 
 
