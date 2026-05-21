@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)file:///C:/Users/Jo%C3%A3o/Downloads/index_9.html -->
+<!-- saved from url=(0050)file:///C:/Users/Jo%C3%A3o/Downloads/index_11.html -->
 <html lang="pt"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
@@ -345,12 +345,14 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'IBM Pl
     </div></div>
 <div class="page" id="pg-col"></div>
 <div class="page" id="pg-atj"></div>
+<div class="page" id="pg-hist"></div>
 
 <!-- BOTTOM NAV -->
 <div class="bnav">
   <button class="bnav-btn active" onclick="goPage(&#39;overview&#39;,this)"><span class="ico">📊</span>Visão Geral</button>
   <button class="bnav-btn" onclick="goPage(&#39;col&#39;,this)"><span class="ico">🏢</span>Colinatrum</button>
   <button class="bnav-btn" onclick="goPage(&#39;atj&#39;,this)"><span class="ico">🏪</span>Ate Já</button>
+  <button class="bnav-btn" onclick="goPage(&#39;hist&#39;,this)"><span class="ico">📋</span>Histórico</button>
 </div>
 
 <button class="fab" onclick="openModal()">+</button>
@@ -447,7 +449,7 @@ let rows=[
   {id:46,name:"Desconhecido",amount:153.83,pagar:0,empresa:"Ate Já",tipo:"fornecedor_atj"},
 ];
 
-let curPage='overview', expandedId=null, openSf={}, nextId=100, saveTimer=null;
+let curPage='overview', expandedId=null, openSf={}, nextId=100, saveTimer=null, historico=[];
 
 // ── STORAGE ──
 function load(){
@@ -457,6 +459,7 @@ function load(){
       rows=d.rows; nextId=d.nextId||100;
       openSf=d.openSf||{};
       if(d.subfams) subfams=d.subfams;
+      if(d.historico) historico=d.historico;
       document.getElementById('i-caixa').value=d.caixa||33270;
       document.getElementById('i-alm').value=d.alm||10000;
     }
@@ -466,7 +469,7 @@ function save(){
   clearTimeout(saveTimer);
   saveTimer=setTimeout(()=>{
     localStorage.setItem(SK,JSON.stringify({
-      rows,nextId,openSf,subfams,
+      rows,nextId,openSf,subfams,historico,
       caixa:parseFloat(document.getElementById('i-caixa').value)||0,
       alm:parseFloat(document.getElementById('i-alm').value)||0
     }));
@@ -516,6 +519,7 @@ function goPage(p,el){
   curPage=p; expandedId=null;
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
   document.getElementById('pg-'+p).classList.add('active');
+  window.scrollTo(0,0);
   document.querySelectorAll('.bnav-btn').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   render();
@@ -526,6 +530,7 @@ function render(){
   if(curPage==='overview') renderOverview();
   else if(curPage==='col') renderEmpresa('Colinatrum','pg-col');
   else if(curPage==='atj') renderEmpresa('Ate Já','pg-atj');
+  else if(curPage==='hist') renderHist();
 }
 
 function renderOverview(){
@@ -752,6 +757,7 @@ function renderEmpresa(empresa,pgId){
                   <div class="field"><label>Nome</label><input type="text" value="${r.name}" onchange="updRow(${r.id},'name',this.value)"></div>
                   <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="${r.amount.toFixed(2)}" onchange="updRow(${r.id},'amount',parseFloat(this.value)||0)"></div>
                 </div>
+                <div id="cr-hist-${r.id}" style="margin-bottom:10px;">${renderCredorHist(r.id)}</div>
                 <button class="del-btn" onclick="delRow(${r.id})">× Apagar este credor</button>
               </div>
             </div>
@@ -800,6 +806,21 @@ function concluido(id){
   const inp=document.getElementById('pi-'+id);
   const val=inp?parseFloat(inp.value)||0:r.pagar||0;
   const pagamento=val>0?Math.min(val,r.amount):r.amount;
+  if(pagamento<=0) return;
+  // Regista no historico
+  const sf=Object.values(subfams).flat().find(s=>s.key===r.tipo);
+  historico.unshift({
+    hid: Date.now(),
+    data: new Date().toLocaleDateString('pt-PT'),
+    hora: new Date().toLocaleTimeString('pt-PT',{hour:'2-digit',minute:'2-digit'}),
+    credor: r.name,
+    empresa: r.empresa,
+    subfamilia: sf?sf.label:r.tipo,
+    valor: pagamento,
+    dividaAntes: r.amount,
+    dividaDepois: Math.max(0,r.amount-pagamento),
+    notas: ''
+  });
   // Reduz a divida original pelo valor pago e zera o pagar
   r.amount=Math.max(0,r.amount-pagamento);
   r.pagar=0;
@@ -831,6 +852,111 @@ function autoFill(){
   const tf=forn.reduce((s,r)=>s+r.amount,0);
   forn.forEach(r=>{const pct=tf>0?r.amount/tf:0;r.pagar=Math.min(r.amount,parseFloat((rest*pct).toFixed(2)));});
   save();upd();
+}
+
+
+
+function renderCredorHist(id){
+  const r=rows.find(x=>x.id===id);
+  if(!r) return '';
+  const pagamentos=historico.filter(h=>h.credor===r.name&&h.empresa===r.empresa);
+  if(pagamentos.length===0) return '<div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div>';
+  const total=pagamentos.reduce((s,h)=>s+h.valor,0);
+  let html='<div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-family:IBM Plex Mono,monospace;margin-bottom:6px;">Histórico de pagamentos — total: '+fmt(total)+' €</div>';
+  pagamentos.slice(0,5).forEach(h=>{
+    html+='<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:12px;">';
+    html+='<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);">'+h.data+' '+h.hora+'</span>';
+    html+='<span style="font-family:IBM Plex Mono,monospace;font-weight:600;color:var(--green);">+'+fmt(h.valor)+' €</span>';
+    html+='</div>';
+  });
+  if(pagamentos.length>5) html+='<div style="font-size:10px;color:var(--muted);font-family:IBM Plex Mono,monospace;margin-top:4px;">... e mais '+(pagamentos.length-5)+' pagamentos</div>';
+  return html;
+}
+
+function renderHist(){
+  const pg=document.getElementById('pg-hist');
+  const totalPago=historico.reduce((s,h)=>s+h.valor,0);
+  const hoje=new Date().toLocaleDateString('pt-PT');
+  const hojeTotal=historico.filter(h=>h.data===hoje).reduce((s,h)=>s+h.valor,0);
+
+  // Filter state
+  const filtEmp=window._filtEmp||'all';
+  const filtBusca=(window._filtBusca||'').toLowerCase();
+
+  let vis=historico.filter(h=>{
+    if(filtEmp!=='all'&&h.empresa!==filtEmp) return false;
+    if(filtBusca&&!h.credor.toLowerCase().includes(filtBusca)&&!h.subfamilia.toLowerCase().includes(filtBusca)) return false;
+    return true;
+  });
+
+  let html=`<div style="display:flex;gap:6px;margin-bottom:10px;">
+    <div style="flex:1;background:var(--green-bg);border:1px solid var(--green-bd);border-radius:var(--r);padding:10px 12px;">
+      <div style="font-size:9px;color:var(--green);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Total pago</div>
+      <div style="font-size:14px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--green);">${fmt(totalPago)} €</div>
+    </div>
+    <div style="flex:1;background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:var(--r);padding:10px 12px;">
+      <div style="font-size:9px;color:var(--blue);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Hoje</div>
+      <div style="font-size:14px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--blue);">${fmt(hojeTotal)} €</div>
+    </div>
+    <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:10px 12px;">
+      <div style="font-size:9px;color:var(--muted);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Registos</div>
+      <div style="font-size:14px;font-weight:700;font-family:'IBM Plex Mono',monospace;">${historico.length}</div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:6px;margin-bottom:10px;">
+    <input type="text" placeholder="Pesquisar credor..." value="${window._filtBusca||''}"
+      style="flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--rsm);padding:9px 12px;font-size:14px;font-family:'IBM Plex Mono',monospace;outline:none;color:var(--text);"
+      oninput="window._filtBusca=this.value;renderHist()">
+    <select style="background:var(--surface);border:1px solid var(--border);border-radius:var(--rsm);padding:9px 8px;font-size:12px;font-family:'IBM Plex Mono',monospace;outline:none;color:var(--text);"
+      onchange="window._filtEmp=this.value;renderHist()">
+      <option value="all" ${filtEmp==='all'?'selected':''}>Todas</option>
+      <option value="Colinatrum" ${filtEmp==='Colinatrum'?'selected':''}>Colinatrum</option>
+      <option value="Ate Já" ${filtEmp==='Ate Já'?'selected':''}>Ate Já</option>
+    </select>
+  </div>`;
+
+  if(vis.length===0){
+    html+='<div class="empty">— sem pagamentos registados —<br><br>Os pagamentos aparecem aqui quando carregas em "Concluído"</div>';
+  } else {
+    let lastData='';
+    vis.forEach(h=>{
+      if(h.data!==lastData){
+        lastData=h.data;
+        const dayTotal=vis.filter(x=>x.data===h.data).reduce((s,x)=>s+x.valor,0);
+        html+=`<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0 6px;border-bottom:1px solid var(--border);margin-bottom:6px;">
+          <span style="font-size:10px;font-family:'IBM Plex Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">${h.data}</span>
+          <span style="font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--green);font-weight:600;">${fmt(dayTotal)} €</span>
+        </div>`;
+      }
+      const empColor=h.empresa==='Colinatrum'?'#3a3a8c':'#7a3800';
+      const empBg=h.empresa==='Colinatrum'?'#eeeef8':'#fdf0e4';
+      html+=`<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;margin-bottom:6px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${h.credor}</div>
+            <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap;">
+              <span style="font-size:9px;padding:2px 6px;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-weight:500;background:${empBg};color:${empColor};border:1px solid ${empColor}33;">${h.empresa}</span>
+              <span style="font-size:9px;padding:2px 6px;border-radius:3px;font-family:'IBM Plex Mono',monospace;background:var(--bg2);color:var(--muted);border:1px solid var(--border);">${h.subfamilia}</span>
+            </div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+            <div style="font-size:16px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--green);">+${fmt(h.valor)} €</div>
+            <div style="font-size:10px;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-top:2px;">${h.hora}</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;font-size:10px;font-family:'IBM Plex Mono',monospace;color:var(--muted);padding-top:8px;border-top:1px solid var(--border);">
+          <span>Antes: <span style="color:var(--red);">${fmt(h.dividaAntes)} €</span></span>
+          <span style="color:var(--border2);">→</span>
+          <span>Depois: <span style="color:${h.dividaDepois===0?'var(--green)':'var(--amber)'};">${fmt(h.dividaDepois)} €</span></span>
+          ${h.dividaDepois===0?'<span style="color:var(--green);margin-left:auto;">✓ LIQUIDADO</span>':''}
+        </div>
+        ${h.notas?`<div style="margin-top:6px;font-size:11px;color:var(--muted);font-family:'IBM Plex Mono',monospace;">${h.notas}</div>`:''}
+      </div>`;
+    });
+  }
+
+  pg.innerHTML=html;
 }
 
 function clearPay(){rows.forEach(r=>r.pagar=0);save();upd();}
