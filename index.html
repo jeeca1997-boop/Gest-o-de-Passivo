@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/Jo%C3%A3o/Downloads/index_11.html -->
+<!-- saved from url=(0050)file:///C:/Users/Jo%C3%A3o/Downloads/index_15.html -->
 <html lang="pt"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
@@ -161,7 +161,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'IBM Pl
 </div>
 
 <!-- PAGES -->
-<div class="page active" id="pg-overview"><div style="display:flex;gap:6px;padding-bottom:6px;">
+<div class="page" id="pg-overview"><div style="display:flex;gap:6px;padding-bottom:6px;">
     <button class="tbtn p" onclick="autoFill()" style="flex:2;">↺ Distribuir auto</button>
     <button class="tbtn" onclick="clearPay()" style="flex:1;">Limpar</button>
   </div>
@@ -343,14 +343,830 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'IBM Pl
           </div>
       </div>
     </div></div>
-<div class="page" id="pg-col"></div>
+<div class="page active" id="pg-col"><div style="display:flex;gap:6px;padding-bottom:10px;">
+    <button class="tbtn p" onclick="autoFill()" style="flex:2;">↺ Distribuir auto</button>
+    <button class="tbtn" onclick="clearPay()" style="flex:1;">Limpar</button>
+  </div><div class="sfblock">
+      <div class="sfhdr" onclick="toggleSf(&#39;Colinatrum&#39;,&#39;salario&#39;)">
+        <div class="sficon" style="background:#e8f4ec;border:1px solid #b8ddc4">👷</div>
+        <div class="sfinfo">
+          <div class="sfname">Salários</div>
+          <div class="sfmeta">11 credores · sinal proporcional</div>
+        </div>
+        <div class="sfright">
+          <div class="sftotal ">14&nbsp;348,62 €</div>
+        </div>
+        <span class="sfchev open">▼</span>
+      </div>
+      <div class="sfbody open">
+        
+        <div class="cr">
+            <div class="cr-main" onclick="toggleCr(1)">
+              <div class="cr-stripe" style="background:#2a6b3c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Gilson</div>
+                <div class="cr-sub">dívida: 2954,00 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">2954,00 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-1" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(1,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(1)">✓ Marcar como concluído — 2954,00 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Gilson" onchange="updRow(1,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="2954.00" onchange="updRow(1,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-1" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(1)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(2)">
+              <div class="cr-stripe" style="background:#2a6b3c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Edson</div>
+                <div class="cr-sub">dívida: 2164,53 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">2164,53 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-2" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(2,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(2)">✓ Marcar como concluído — 2164,53 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Edson" onchange="updRow(2,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="2164.53" onchange="updRow(2,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-2" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(2)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(3)">
+              <div class="cr-stripe" style="background:#2a6b3c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Esperança</div>
+                <div class="cr-sub">dívida: 1990,58 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">1990,58 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-3" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(3,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(3)">✓ Marcar como concluído — 1990,58 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Esperança" onchange="updRow(3,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="1990.58" onchange="updRow(3,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-3" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(3)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(4)">
+              <div class="cr-stripe" style="background:#2a6b3c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Patricia</div>
+                <div class="cr-sub">dívida: 1269,09 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">1269,09 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-4" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(4,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(4)">✓ Marcar como concluído — 1269,09 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Patricia" onchange="updRow(4,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="1269.09" onchange="updRow(4,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-4" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(4)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(5)">
+              <div class="cr-stripe" style="background:#2a6b3c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Alex</div>
+                <div class="cr-sub">dívida: 1230,53 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">1230,53 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-5" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(5,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(5)">✓ Marcar como concluído — 1230,53 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Alex" onchange="updRow(5,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="1230.53" onchange="updRow(5,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-5" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(5)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(6)">
+              <div class="cr-stripe" style="background:#2a6b3c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Swelly</div>
+                <div class="cr-sub">dívida: 1116,31 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">1116,31 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-6" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(6,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(6)">✓ Marcar como concluído — 1116,31 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Swelly" onchange="updRow(6,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="1116.31" onchange="updRow(6,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-6" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(6)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(7)">
+              <div class="cr-stripe" style="background:#2a6b3c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Jaimila</div>
+                <div class="cr-sub">dívida: 1200,00 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">1200,00 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-7" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(7,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(7)">✓ Marcar como concluído — 1200,00 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Jaimila" onchange="updRow(7,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="1200.00" onchange="updRow(7,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-7" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(7)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(8)">
+              <div class="cr-stripe" style="background:#2a6b3c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Siny</div>
+                <div class="cr-sub">dívida: 753,35 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">753,35 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-8" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(8,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(8)">✓ Marcar como concluído — 753,35 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Siny" onchange="updRow(8,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="753.35" onchange="updRow(8,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-8" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(8)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(9)">
+              <div class="cr-stripe" style="background:#2a6b3c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Carmem</div>
+                <div class="cr-sub">dívida: 650,23 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">650,23 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-9" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(9,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(9)">✓ Marcar como concluído — 650,23 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Carmem" onchange="updRow(9,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="650.23" onchange="updRow(9,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-9" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(9)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(10)">
+              <div class="cr-stripe" style="background:#2a6b3c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Ivone</div>
+                <div class="cr-sub">dívida: 600,00 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">600,00 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-10" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(10,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(10)">✓ Marcar como concluído — 600,00 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Ivone" onchange="updRow(10,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="600.00" onchange="updRow(10,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-10" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(10)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(11)">
+              <div class="cr-stripe" style="background:#2a6b3c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Miguel ate já</div>
+                <div class="cr-sub">dívida: 420,00 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">420,00 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-11" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(11,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(11)">✓ Marcar como concluído — 420,00 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Miguel ate já" onchange="updRow(11,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="420.00" onchange="updRow(11,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-11" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(11)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div>
+        <div class="add-sf-btn" onclick="addCredor(&#39;Colinatrum&#39;,&#39;salario&#39;)">
+          <span style="font-size:18px;font-weight:300">+</span> Adicionar a Salários
+        </div>
+      </div>
+    </div><div class="sfblock">
+      <div class="sfhdr" onclick="toggleSf(&#39;Colinatrum&#39;,&#39;fornecedor&#39;)">
+        <div class="sficon" style="background:#eeeef8;border:1px solid #c4c4e8">🏪</div>
+        <div class="sfinfo">
+          <div class="sfname">Fornecedores</div>
+          <div class="sfmeta">13 credores · sinal proporcional</div>
+        </div>
+        <div class="sfright">
+          <div class="sftotal ">41&nbsp;522,46 €</div>
+        </div>
+        <span class="sfchev ">▼</span>
+      </div>
+      <div class="sfbody ">
+        
+        <div class="cr">
+            <div class="cr-main" onclick="toggleCr(12)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Suminho</div>
+                <div class="cr-sub">dívida: 16&nbsp;164,83 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">16&nbsp;164,83 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-12" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(12,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(12)">✓ Marcar como concluído — 16&nbsp;164,83 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Suminho" onchange="updRow(12,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="16164.83" onchange="updRow(12,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-12" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(12)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(13)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Segafredo</div>
+                <div class="cr-sub">dívida: 6022,71 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">6022,71 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-13" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(13,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(13)">✓ Marcar como concluído — 6022,71 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Segafredo" onchange="updRow(13,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="6022.71" onchange="updRow(13,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-13" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(13)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(14)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Casemira de Lima</div>
+                <div class="cr-sub">dívida: 5061,79 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">5061,79 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-14" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(14,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(14)">✓ Marcar como concluído — 5061,79 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Casemira de Lima" onchange="updRow(14,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="5061.79" onchange="updRow(14,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-14" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(14)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(15)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Frescas Supresas</div>
+                <div class="cr-sub">dívida: 4287,68 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">4287,68 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-15" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(15,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(15)">✓ Marcar como concluído — 4287,68 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Frescas Supresas" onchange="updRow(15,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="4287.68" onchange="updRow(15,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-15" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(15)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(16)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Talho</div>
+                <div class="cr-sub">dívida: 2952,18 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">2952,18 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-16" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(16,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(16)">✓ Marcar como concluído — 2952,18 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Talho" onchange="updRow(16,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="2952.18" onchange="updRow(16,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-16" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(16)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(17)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Makro</div>
+                <div class="cr-sub">dívida: 2400,00 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">2400,00 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-17" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(17,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(17)">✓ Marcar como concluído — 2400,00 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Makro" onchange="updRow(17,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="2400.00" onchange="updRow(17,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-17" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(17)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(18)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Elis</div>
+                <div class="cr-sub">dívida: 1533,03 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">1533,03 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-18" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(18,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(18)">✓ Marcar como concluído — 1533,03 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Elis" onchange="updRow(18,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="1533.03" onchange="updRow(18,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-18" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(18)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(19)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Sumol Compal</div>
+                <div class="cr-sub">dívida: 728,56 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">728,56 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-19" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(19,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(19)">✓ Marcar como concluído — 728,56 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Sumol Compal" onchange="updRow(19,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="728.56" onchange="updRow(19,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-19" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(19)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(20)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Vanibru</div>
+                <div class="cr-sub">dívida: 700,00 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">700,00 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-20" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(20,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(20)">✓ Marcar como concluído — 700,00 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Vanibru" onchange="updRow(20,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="700.00" onchange="updRow(20,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-20" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(20)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(21)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Gas</div>
+                <div class="cr-sub">dívida: 541,81 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">541,81 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-21" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(21,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(21)">✓ Marcar como concluído — 541,81 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Gas" onchange="updRow(21,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="541.81" onchange="updRow(21,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-21" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(21)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(22)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Bio Braga</div>
+                <div class="cr-sub">dívida: 535,11 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">535,11 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-22" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(22,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(22)">✓ Marcar como concluído — 535,11 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Bio Braga" onchange="updRow(22,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="535.11" onchange="updRow(22,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-22" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(22)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(23)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">CleanZende</div>
+                <div class="cr-sub">dívida: 479,70 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">479,70 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-23" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(23,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(23)">✓ Marcar como concluído — 479,70 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="CleanZende" onchange="updRow(23,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="479.70" onchange="updRow(23,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-23" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(23)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(24)">
+              <div class="cr-stripe" style="background:#3a3a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">Vinhos</div>
+                <div class="cr-sub">dívida: 115,06 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">115,06 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-24" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(24,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(24)">✓ Marcar como concluído — 115,06 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="Vinhos" onchange="updRow(24,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="115.06" onchange="updRow(24,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-24" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(24)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div>
+        <div class="add-sf-btn" onclick="addCredor(&#39;Colinatrum&#39;,&#39;fornecedor&#39;)">
+          <span style="font-size:18px;font-weight:300">+</span> Adicionar a Fornecedores
+        </div>
+      </div>
+    </div><div class="sfblock">
+      <div class="sfhdr" onclick="toggleSf(&#39;Colinatrum&#39;,&#39;socio&#39;)">
+        <div class="sficon" style="background:#f0eefa;border:1px solid #c8b8ec">🤝</div>
+        <div class="sfinfo">
+          <div class="sfname">Sócios</div>
+          <div class="sfmeta">2 credores · sinal proporcional</div>
+        </div>
+        <div class="sfright">
+          <div class="sftotal ">6476,00 €</div>
+        </div>
+        <span class="sfchev ">▼</span>
+      </div>
+      <div class="sfbody ">
+        
+        <div class="cr">
+            <div class="cr-main" onclick="toggleCr(25)">
+              <div class="cr-stripe" style="background:#4a2a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">António (sócio)</div>
+                <div class="cr-sub">dívida: 3924,00 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">3924,00 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-25" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(25,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(25)">✓ Marcar como concluído — 3924,00 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="António (sócio)" onchange="updRow(25,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="3924.00" onchange="updRow(25,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-25" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(25)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div><div class="cr">
+            <div class="cr-main" onclick="toggleCr(26)">
+              <div class="cr-stripe" style="background:#4a2a8c"></div>
+              <div class="cr-info">
+                <div class="cr-name">João (sócio)</div>
+                <div class="cr-sub">dívida: 2552,00 €</div>
+              </div>
+              <div class="cr-right">
+                <div class="cr-amt ">2552,00 €</div>
+                
+                <span class="cbadge b-gray">POR PAGAR</span>
+              </div>
+            </div>
+            <div class="cr-detail ">
+              <div class="dp">
+                
+                <div class="pay-box">
+                  <div class="pay-lbl">💰 Valor a pagar agora</div>
+                  <input class="pay-inp" id="pi-26" type="number" inputmode="decimal" pattern="[0-9]*" value="0.00" onfocus="this.select()" onchange="updPagar(26,this.value)">
+                </div>
+                <button class="conc-btn" onclick="concluido(26)">✓ Marcar como concluído — 2552,00 €</button>
+                <div class="frow" style="margin-bottom:10px;">
+                  <div class="field"><label>Nome</label><input type="text" value="João (sócio)" onchange="updRow(26,&#39;name&#39;,this.value)"></div>
+                  <div class="field"><label>Dívida total (€)</label><input type="number" inputmode="decimal" value="2552.00" onchange="updRow(26,&#39;amount&#39;,parseFloat(this.value)||0)"></div>
+                </div>
+                <div id="cr-hist-26" style="margin-bottom:10px;"><div style="font-size:11px;color:var(--muted);font-family:IBM Plex Mono,monospace;padding:6px 0;">Sem pagamentos registados ainda.</div></div>
+                <button class="del-btn" onclick="delRow(26)">× Apagar este credor</button>
+              </div>
+            </div>
+          </div>
+        <div class="add-sf-btn" onclick="addCredor(&#39;Colinatrum&#39;,&#39;socio&#39;)">
+          <span style="font-size:18px;font-weight:300">+</span> Adicionar a Sócios
+        </div>
+      </div>
+    </div><div style="margin-top:4px;">
+    <button class="tbtn" style="width:100%;padding:11px;" onclick="openSfModal(&#39;Colinatrum&#39;)">+ Nova subfamília em Colinatrum</button>
+  </div></div>
 <div class="page" id="pg-atj"></div>
 <div class="page" id="pg-hist"></div>
 
 <!-- BOTTOM NAV -->
 <div class="bnav">
-  <button class="bnav-btn active" onclick="goPage(&#39;overview&#39;,this)"><span class="ico">📊</span>Visão Geral</button>
-  <button class="bnav-btn" onclick="goPage(&#39;col&#39;,this)"><span class="ico">🏢</span>Colinatrum</button>
+  <button class="bnav-btn" onclick="goPage(&#39;overview&#39;,this)"><span class="ico">📊</span>Visão Geral</button>
+  <button class="bnav-btn active" onclick="goPage(&#39;col&#39;,this)"><span class="ico">🏢</span>Colinatrum</button>
   <button class="bnav-btn" onclick="goPage(&#39;atj&#39;,this)"><span class="ico">🏪</span>Ate Já</button>
   <button class="bnav-btn" onclick="goPage(&#39;hist&#39;,this)"><span class="ico">📋</span>Histórico</button>
 </div>
@@ -395,23 +1211,24 @@ let subfams={
     {key:'socio',label:'Sócios',icon:'🤝',color:'#4a2a8c',bg:'#f0eefa',bd:'#c8b8ec'},
   ],
   'Ate Já':[
+    {key:'salario_atj',label:'Salários',icon:'👷',color:'#2a6b3c',bg:'#e8f4ec',bd:'#b8ddc4'},
     {key:'fisco',label:'Fisco',icon:'🏛️',color:'#1a4a7a',bg:'#e8f0fa',bd:'#b8ccec'},
     {key:'fornecedor_atj',label:'Fornecedores',icon:'🏪',color:'#7a3800',bg:'#fdf0e4',bd:'#e8c8a0'},
   ]
 };
 
 let rows=[
-  {id:1,name:"Gilson",amount:2954.00,pagar:0,empresa:"Colinatrum",tipo:"salario"},
+  {id:1,name:"Gilson",amount:2954.00,pagar:0,empresa:"Ate Já",tipo:"salario_atj"},
   {id:2,name:"Edson",amount:2164.53,pagar:0,empresa:"Colinatrum",tipo:"salario"},
   {id:3,name:"Esperança",amount:1990.58,pagar:0,empresa:"Colinatrum",tipo:"salario"},
-  {id:4,name:"Patricia",amount:1269.09,pagar:0,empresa:"Colinatrum",tipo:"salario"},
-  {id:5,name:"Alex",amount:1230.53,pagar:0,empresa:"Colinatrum",tipo:"salario"},
+  {id:4,name:"Patricia",amount:1269.09,pagar:0,empresa:"Ate Já",tipo:"salario_atj"},
+  {id:5,name:"Alex",amount:1230.53,pagar:0,empresa:"Ate Já",tipo:"salario_atj"},
   {id:6,name:"Swelly",amount:1116.31,pagar:0,empresa:"Colinatrum",tipo:"salario"},
   {id:7,name:"Jaimila",amount:1200.00,pagar:0,empresa:"Colinatrum",tipo:"salario"},
   {id:8,name:"Siny",amount:753.35,pagar:0,empresa:"Colinatrum",tipo:"salario"},
   {id:9,name:"Carmem",amount:650.23,pagar:0,empresa:"Colinatrum",tipo:"salario"},
   {id:10,name:"Ivone",amount:600.00,pagar:0,empresa:"Colinatrum",tipo:"salario"},
-  {id:11,name:"Miguel ate já",amount:420.00,pagar:0,empresa:"Colinatrum",tipo:"salario"},
+  {id:11,name:"Miguel ate já",amount:420.00,pagar:0,empresa:"Ate Já",tipo:"salario_atj"},
   {id:12,name:"Suminho",amount:16164.83,pagar:0,empresa:"Colinatrum",tipo:"fornecedor"},
   {id:13,name:"Segafredo",amount:6022.71,pagar:0,empresa:"Colinatrum",tipo:"fornecedor"},
   {id:14,name:"Casemira de Lima",amount:5061.79,pagar:0,empresa:"Colinatrum",tipo:"fornecedor"},
